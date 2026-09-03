@@ -11,6 +11,25 @@ function Contact() {
   const pageTitle = `Contact ${business.name} | ${address.city}`;
   const pageDescription = `Contact ${business.name} for medical, surgical and hospital supply enquiries in ${address.city}, ${address.state}.`;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    mainEntity: {
+      "@type": "MedicalBusiness",
+      name: business.name,
+      telephone: contact.phoneNumbers.map(phoneHref),
+      email: contact.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
+        addressLocality: address.city,
+        postalCode: address.postalCode,
+        addressRegion: address.state,
+        addressCountry: address.country,
+      },
+    },
+  };
+
   return (
     <>
       <Helmet>
@@ -21,6 +40,12 @@ function Contact() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${address.city}, ${address.state}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <PageHero
         eyebrow="Contact"

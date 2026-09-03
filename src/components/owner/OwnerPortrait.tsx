@@ -17,6 +17,8 @@ function OwnerPortrait({ compact = false }: OwnerPortraitProps) {
         <img
           src={profilePhoto}
           alt={`${owner.name} - ${owner.designation}, ${owner.business}`}
+          loading="lazy"
+          decoding="async"
           className="aspect-[4/5] h-full w-full object-cover"
           onError={() => setHasPhoto(false)}
         />
