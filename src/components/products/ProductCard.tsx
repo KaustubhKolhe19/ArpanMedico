@@ -16,7 +16,15 @@ function ProductCard({ item, image }: ProductCardProps) {
   return (
     <article className="flex items-start justify-between gap-4 py-3">
       <div className="min-w-0">
-        {image ? <img src={image} alt="" className="mb-2 h-10 w-auto object-contain" /> : null}
+        {image ? (
+          <img
+            src={image}
+            alt={item.name}
+            loading="lazy"
+            decoding="async"
+            className="mb-2 h-10 w-auto object-contain"
+          />
+        ) : null}
         <h3 className="text-sm font-medium leading-6 text-pretty text-slate-900">{item.name}</h3>
       </div>
       <a

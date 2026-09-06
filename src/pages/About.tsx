@@ -17,6 +17,23 @@ function About() {
   const pageTitle = `${business.name} in ${address.city} | About`;
   const pageDescription = `${business.name} in ${address.city}, ${address.state}, with Wholesale, Medicine, Surgical and Instrument categories.`;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    mainEntity: {
+      "@type": "Organization",
+      name: business.name,
+      founder: business.owner,
+      description: business.description,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: address.city,
+        addressRegion: address.state,
+        addressCountry: address.country,
+      },
+    },
+  };
+
   return (
     <>
       <Helmet>
@@ -27,6 +44,12 @@ function About() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${address.city}, ${address.state}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
       <AboutHero />

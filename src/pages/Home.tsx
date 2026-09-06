@@ -5,13 +5,13 @@ import BusinessIntro from "../components/home/BusinessIntro";
 import ContactCTA from "../components/home/ContactCTA";
 import Hero from "../components/home/Hero";
 import HomeBrandsSection from "../components/home/HomeBrandsSection";
+import IndustriesSection from "../components/home/IndustriesSection";
 import LocationSection from "../components/home/LocationSection";
 import SpecialtiesSection from "../components/home/SpecialtiesSection";
 import StrengthSection from "../components/home/StrengthSection";
 import WhyChooseSection from "../components/home/WhyChooseSection";
 import OwnerPreview from "../components/owner/OwnerPreview";
 import { business } from "../data/business";
-import { industries } from "../data/industries";
 import { phoneHref } from "../lib/display";
 
 const HomeBusinessInsights = lazy(() => import("../components/analytics/HomeBusinessInsights"));
@@ -22,9 +22,13 @@ function Home() {
   const seoDescription = `${business.name} in ${address.city}, ${address.state}, ${address.country}. ${business.description}.`;
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["MedicalBusiness", "WholesaleStore", "LocalBusiness"],
     name: business.name,
     description: business.description,
+    founder: {
+      "@type": "Person",
+      name: business.owner,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
@@ -32,6 +36,11 @@ function Home() {
       postalCode: address.postalCode,
       addressRegion: address.state,
       addressCountry: address.country,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 19.5761,
+      longitude: 74.207,
     },
     email: contact.email,
     telephone: contact.phoneNumbers.map(phoneHref),
@@ -42,10 +51,18 @@ function Home() {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
+        <link rel="canonical" href="/" />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${address.city}, ${address.district}, ${address.state}`} />
+        <meta name="geo.position" content="19.5761;74.2070" />
+        <meta name="ICBM" content="19.5761, 74.2070" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Hero />
@@ -56,33 +73,13 @@ function Home() {
         <HomeBusinessInsights />
       </Suspense>
       <HomeBrandsSection />
-      <IndustriesPreview />
+      <IndustriesSection />
       <WhyChooseSection />
       <StrengthSection />
       <OwnerPreview />
       <LocationSection />
       <ContactCTA />
     </>
-  );
-}
-
-function IndustriesPreview() {
-  return (
-    <section className="bg-slate-50 section-pad" aria-labelledby="home-industries-heading">
-      <div className="site-container">
-        <p className="section-eyebrow text-teal-700">Arpan Medico</p>
-        <h2 id="home-industries-heading" className="section-title text-slate-950">
-          Industries We Serve
-        </h2>
-        <ul className="mt-5 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map((industry) => (
-            <li key={industry.id} className="border-t border-slate-200 py-3 text-sm font-medium leading-6 text-slate-700">
-              {industry.name}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
   );
 }
 

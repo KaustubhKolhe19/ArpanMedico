@@ -19,11 +19,11 @@ type AnalyticsKpiCardsProps = {
 function AnalyticsKpiCards({ kpis, columns = 4 }: AnalyticsKpiCardsProps) {
   const gridClass =
     columns === 6
-      ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
-      : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
+      ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4"
+      : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4";
 
   return (
-    <div role="list" aria-label="Sample key figures" className={`${gridClass} border-y border-slate-200`}>
+    <div role="list" aria-label="Key figures" className={gridClass}>
       {kpis.map((kpi) => {
         const Icon = kpiIcons[kpi.iconIdentifier];
 
@@ -31,15 +31,15 @@ function AnalyticsKpiCards({ kpis, columns = 4 }: AnalyticsKpiCardsProps) {
           <article
             key={kpi.label}
             role="listitem"
-            className={
-              columns === 6
-                ? "flex flex-col border-t border-slate-200 py-5 first:border-t-0 even:sm:border-l even:sm:border-slate-200 sm:px-6 sm:py-6 xl:border-t-0 xl:border-l xl:border-slate-200 xl:first:border-l-0 xl:first:pl-0"
-                : "flex flex-col border-t border-slate-200 py-5 first:border-t-0 even:sm:border-l even:sm:border-slate-200 sm:px-6 sm:py-6 lg:border-t-0 lg:border-l lg:border-slate-200 lg:first:border-l-0 lg:first:pl-0"
-            }
+            className="flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition duration-200 hover:border-teal-500/40 hover:shadow-md"
           >
-            <Icon size={15} className="text-teal-700" aria-hidden="true" />
-            <p className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">{kpi.value}</p>
-            <p className="mt-1 text-sm text-slate-500">{kpi.label}</p>
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{kpi.label}</span>
+              <div className="flex size-9 items-center justify-center rounded-lg bg-teal-50 text-teal-700">
+                <Icon size={18} aria-hidden="true" />
+              </div>
+            </div>
+            <p className="mt-4 text-3xl font-bold tracking-tight text-slate-950">{kpi.value}</p>
           </article>
         );
       })}

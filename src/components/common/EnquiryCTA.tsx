@@ -23,7 +23,7 @@ function EnquiryCTA({
 }: EnquiryCTAProps) {
   return (
     <section className="bg-teal-700 text-white" aria-labelledby="enquiry-cta-heading">
-      <div className="site-container flex flex-col gap-6 py-12 sm:py-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-16">
+      <div className="site-container flex flex-col gap-6 py-8 sm:py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-10">
         <div className="max-w-2xl">
           <p className="section-eyebrow text-teal-100">{eyebrow}</p>
           <h2 id="enquiry-cta-heading" className="section-title text-white">

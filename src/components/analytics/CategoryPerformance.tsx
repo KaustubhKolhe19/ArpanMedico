@@ -80,9 +80,9 @@ function CategoryTooltip({ active, payload }: ChartTooltipProps) {
   const point = payload[0].payload;
 
   return (
-    <div className="border border-slate-200 bg-white px-3 py-2 text-xs">
+    <div className="border border-slate-200 bg-white px-3 py-2 text-xs shadow-md rounded-lg">
       <p className="font-bold text-slate-950">{point.category}</p>
-      <p className="mt-1 text-slate-600">Sample revenue: {formatLakhs(point.revenue)}</p>
+      <p className="mt-1 text-slate-600">Revenue: {formatLakhs(point.revenue)}</p>
     </div>
   );
 }
@@ -93,12 +93,12 @@ function CategoryPerformance({ data, headingLevel = "h2" }: CategoryPerformanceP
 
   return (
     <article className="min-w-0" aria-labelledby="category-performance-title">
-      <Heading id="category-performance-title" className="text-lg font-semibold tracking-tight text-slate-950">
-        Category Performance
+      <Heading id="category-performance-title" className="text-lg font-bold tracking-tight text-slate-950">
+        Revenue by Category
       </Heading>
       <div
         className="mt-5 h-60 w-full min-w-0 overflow-hidden sm:h-72"
-        aria-label="Horizontal bar chart of sample revenue by business category, in lakhs of rupees"
+        aria-label="Horizontal bar chart of revenue by business category, in lakhs of rupees"
       >
         <ResponsiveContainer width="100%" height="100%" debounce={50}>
           <BarChart data={chartData} layout="vertical" margin={{ top: 4, right: 16, left: 4, bottom: 0 }}>
@@ -122,7 +122,7 @@ function CategoryPerformance({ data, headingLevel = "h2" }: CategoryPerformanceP
             <Tooltip content={<CategoryTooltip />} cursor={{ fill: "#f8fafc" }} />
             <Bar
               dataKey="revenue"
-              name="Sample revenue"
+              name="Revenue"
               fill={ANALYTICS_ACCENT_DARK}
               barSize={18}
               isAnimationActive={false}
@@ -133,7 +133,7 @@ function CategoryPerformance({ data, headingLevel = "h2" }: CategoryPerformanceP
       <ul className="sr-only">
         {data.map((point) => (
           <li key={point.category}>
-            {point.category}: {formatLakhs(point.revenue)} sample revenue
+            {point.category}: {formatLakhs(point.revenue)} revenue
           </li>
         ))}
       </ul>
