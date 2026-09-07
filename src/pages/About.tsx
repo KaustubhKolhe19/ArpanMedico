@@ -82,10 +82,10 @@ function About() {
       </section>
 
       <BusinessOverview />
-      <ContentList title="Our Specialities" items={specialties} columns={2} muted />
-      <ContentList title="Our Strength" items={strengths} featuredCount={4} />
-      <ContentList title="Why Choose Us" items={whyChooseUs} numbered muted />
-      <ContentList title="Industries We Serve" items={industries} compact />
+      <ContentList title="Our Specialities" items={specialties} columns={2} />
+      <ContentList title="Our Strength" items={strengths} featuredCount={4} muted />
+      <ContentList title="Why Choose Us" items={whyChooseUs} numbered />
+      <ContentList title="Industries We Serve" items={industries} compact muted />
       <LocalPresence />
 
       <section className="bg-slate-50" aria-labelledby="about-contact-heading">
@@ -151,7 +151,7 @@ function ContentList({ title, items, muted = false, columns = 1, numbered = fals
   const supporting = featuredCount ? items.slice(featuredCount) : [];
 
   return (
-    <section className={`${muted ? "bg-slate-50" : "bg-white"} section-pad`} aria-labelledby={headingId}>
+    <section className={`${muted ? "bg-[#f6f9fb]" : "bg-white"} section-pad`} aria-labelledby={headingId}>
       <div className="site-container">
         <p className="section-eyebrow text-teal-700">Arpan Medico</p>
         <h2 id={headingId} className="section-title text-slate-950">

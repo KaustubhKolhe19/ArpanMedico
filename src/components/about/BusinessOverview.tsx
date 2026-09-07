@@ -3,7 +3,7 @@ import { displayCategory } from "../../lib/display";
 
 function BusinessOverview() {
   return (
-    <section className="bg-slate-50 section-pad" aria-labelledby="overview-heading">
+    <section className="bg-[#f6f9fb] section-pad" aria-labelledby="overview-heading">
       <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
         <div>
           <p className="section-eyebrow text-teal-700">Business overview</p>
