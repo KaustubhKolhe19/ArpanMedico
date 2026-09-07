@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 node_modules
-=======
+
 # Dependencies
-node_modules
 .pnpm-store
 
 # Production build outputs
@@ -51,4 +49,3 @@ lerna-debug.log*
 ehthumbs.db
 Thumbs.db
 Desktop.ini
->>>>>>> f3cc38868324baac2ebe902eb24138614a520ab5

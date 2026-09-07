@@ -3,9 +3,10 @@ import ContactEnquirySection from "../components/contact/ContactEnquirySection";
 import ContactFinalCTA from "../components/contact/ContactFinalCTA";
 import ContactHero from "../components/contact/ContactHero";
 import { business } from "../data/business";
+import { phoneHref } from "../lib/display";
 
 function Contact() {
-  const { address } = business;
+  const { address, contact } = business;
   const pageTitle = `Contact ${business.name} | Surgical & Medical Supplies in ${address.city}`;
   const pageDescription = `Contact ${business.name} in ${address.city} for medical, surgical and hospital supply requirements. Call, email or send an enquiry on WhatsApp.`;
 
