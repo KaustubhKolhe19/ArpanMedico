@@ -3,10 +3,23 @@ import EnquiryCTA from "../components/common/EnquiryCTA";
 import IndustryCategoryGrid from "../components/industries/IndustryCategoryGrid";
 import PageHero from "../components/common/PageHero";
 import { business } from "../data/business";
+import { industries } from "../data/industries";
 
 function Industries() {
   const pageTitle = `Industries We Serve | ${business.name}`;
   const pageDescription = `${business.name} in ${business.address.city}, ${business.address.state} serves confirmed healthcare customer types including hospitals, clinics, medical stores and healthcare institutions.`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Healthcare Sectors Served",
+    numberOfItems: industries.length,
+    itemListElement: industries.map((industry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: industry.name,
+    })),
+  };
 
   return (
     <>
@@ -18,6 +31,12 @@ function Industries() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/industries" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${business.address.city}, ${business.address.state}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <PageHero
         eyebrow="Industries we serve"

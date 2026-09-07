@@ -37,7 +37,9 @@ function Header() {
           {hasLogo ? (
             <img
               src="/images/logo/arpan-medico-logo.png"
-              alt=""
+              alt={`${business.name} Logo`}
+              loading="eager"
+              decoding="async"
               className="h-7 w-auto max-w-28 object-contain"
               onError={() => setHasLogo(false)}
             />

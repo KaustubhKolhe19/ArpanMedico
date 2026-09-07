@@ -33,9 +33,9 @@ function RevenueTooltip({ active, payload }: ChartTooltipProps) {
   const point = payload[0].payload;
 
   return (
-    <div className="border border-slate-200 bg-white px-3 py-2 text-xs">
+    <div className="border border-slate-200 bg-white px-3 py-2 text-xs shadow-md rounded-lg">
       <p className="font-bold text-slate-950">{point.month}</p>
-      <p className="mt-1 text-slate-600">Sample revenue: {formatLakhs(point.revenue)}</p>
+      <p className="mt-1 text-slate-600">Revenue: {formatLakhs(point.revenue)}</p>
     </div>
   );
 }
@@ -46,12 +46,12 @@ function RevenueChart({ data, headingLevel = "h2" }: RevenueChartProps) {
 
   return (
     <article className="min-w-0" aria-labelledby="revenue-chart-title">
-      <Heading id="revenue-chart-title" className="text-lg font-semibold tracking-tight text-slate-950">
-        Monthly Revenue
+      <Heading id="revenue-chart-title" className="text-lg font-bold tracking-tight text-slate-950">
+        Monthly Distribution Revenue
       </Heading>
       <div
         className="mt-5 h-56 w-full min-w-0 overflow-hidden sm:h-64"
-        aria-label="Line chart of sample monthly revenue from April to September, in lakhs of rupees"
+        aria-label="Line chart of monthly revenue from April to September, in lakhs of rupees"
       >
         <ResponsiveContainer width="100%" height="100%" debounce={50}>
           <LineChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
@@ -75,7 +75,7 @@ function RevenueChart({ data, headingLevel = "h2" }: RevenueChartProps) {
             <Line
               type="monotone"
               dataKey="revenue"
-              name="Sample revenue"
+              name="Revenue"
               stroke={ANALYTICS_ACCENT}
               strokeWidth={2.5}
               dot={{ r: 4, fill: ANALYTICS_ACCENT, strokeWidth: 2, stroke: "#fff" }}
@@ -88,7 +88,7 @@ function RevenueChart({ data, headingLevel = "h2" }: RevenueChartProps) {
       <ul className="sr-only">
         {data.map((point) => (
           <li key={point.month}>
-            {point.month}: {formatLakhs(point.revenue)} sample revenue
+            {point.month}: {formatLakhs(point.revenue)} revenue
           </li>
         ))}
       </ul>
