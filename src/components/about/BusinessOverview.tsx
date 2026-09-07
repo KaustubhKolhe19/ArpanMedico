@@ -8,7 +8,7 @@ function BusinessOverview() {
         <div>
           <p className="section-eyebrow text-teal-700">Business overview</p>
           <h2 id="overview-heading" className="section-title text-slate-950">
-            Four categories, clearly represented.
+            Three categories, clearly represented.
           </h2>
           <p className="body-copy mt-3">The following categories are the ones identified for {business.name}.</p>
         </div>

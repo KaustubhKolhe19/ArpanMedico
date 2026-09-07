@@ -12,7 +12,7 @@ export const business: BusinessInfo = {
     "Arpan Medico is an authorized supplier of premium MNC surgical products, injectable medicines, IV fluids, rehabilitation products, and hospital consumables. We cater to hospitals, medical stores, clinics, diagnostic centers, corporate healthcare organizations, and pharmaceutical businesses with a wide range of quality products.",
     "Our focus is on providing genuine products, competitive wholesale pricing, quick order processing, and dependable customer support to healthcare professionals across Maharashtra.",
   ],
-  categories: ["Wholesale -", "Medicine", "Surgical", "Instrument"],
+  categories: ["Medicines", "Surgical", "Instruments"],
   address: {
     line1: "Arpan Medico",
     line2: "Kadlag Complex",

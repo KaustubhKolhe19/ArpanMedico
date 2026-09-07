@@ -6,8 +6,7 @@ import ProductCard from "./ProductCard";
 const categoryLabels: Record<ProductCategory["id"], string> = {
   medicines: "Confirmed medicine category items.",
   "surgical-products": "Confirmed surgical product category items.",
-  "medical-equipment-consumables": "Confirmed medical equipment and consumable category items.",
-  "healthcare-supplies": "Confirmed healthcare supply category items.",
+  instruments: "Confirmed instrument and related healthcare supply items.",
 };
 
 type ProductCategorySectionProps = {

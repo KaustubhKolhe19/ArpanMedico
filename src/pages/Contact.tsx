@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import ContactEnquirySection from "../components/contact/ContactEnquirySection";
 import ContactFinalCTA from "../components/contact/ContactFinalCTA";
 import ContactHero from "../components/contact/ContactHero";
-import ContactLocationSection from "../components/contact/ContactLocationSection";
 import { business } from "../data/business";
 
 function Contact() {
@@ -23,7 +22,6 @@ function Contact() {
       </Helmet>
       <ContactHero />
       <ContactEnquirySection />
-      <ContactLocationSection />
       <ContactFinalCTA />
     </>
   );

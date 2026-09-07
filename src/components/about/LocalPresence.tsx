@@ -1,10 +1,9 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { business } from "../../data/business";
 import AddressLines from "../common/AddressLines";
+import { CONTACT_GOOGLE_MAPS_EMBED_SRC, CONTACT_GOOGLE_MAPS_URL } from "../contact/contactMaps";
 
 function LocalPresence() {
-  const { address } = business;
-
   return (
     <section className="bg-white section-pad" aria-labelledby="local-presence-heading">
       <div className="site-container grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-14">
@@ -19,21 +18,21 @@ function LocalPresence() {
               <AddressLines />
             </span>
           </address>
-          <a href={business.mapsUrl} target="_blank" rel="noreferrer" className="btn btn-secondary mt-6">
+          <a href={CONTACT_GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary mt-6">
             Get Directions
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
-        <div className="flex min-h-52 items-center justify-center border border-slate-200 bg-slate-50 px-6 py-10 text-center">
-          <div>
-            <MapPin size={20} className="mx-auto text-teal-700" aria-hidden="true" />
-            <p className="mt-3 font-semibold text-slate-900">
-              {address.city}, {address.state}
-            </p>
-            <p className="mt-2 max-w-xs text-sm leading-6 text-slate-500">
-              Map embed placeholder. Use Get Directions for the confirmed map location.
-            </p>
-          </div>
+        <div className="min-h-52 overflow-hidden border border-slate-200 bg-slate-50">
+          <iframe
+            title={`${business.name} location on Google Maps`}
+            src={CONTACT_GOOGLE_MAPS_EMBED_SRC}
+            className="block h-[280px] w-full border-0"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </div>
       </div>
     </section>

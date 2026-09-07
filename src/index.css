@@ -422,7 +422,7 @@ body {
 }
 
 .industry-card-title {
-	margin-top: 1.15rem;
+	margin: 1.15rem 0 0;
 	min-height: 2.7em;
 	font-size: 1.05rem;
 	font-weight: 600;
@@ -431,9 +431,17 @@ body {
 	color: #0f172a;
 }
 
-.industry-card-arrow {
+.industry-card-footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1rem;
 	margin-top: auto;
 	padding-top: 1rem;
+}
+
+.industry-card-arrow {
+	flex: 0 0 auto;
 	color: #94a3b8;
 	transition: color 0.18s ease, transform 0.18s ease;
 }

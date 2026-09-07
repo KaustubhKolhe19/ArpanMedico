@@ -4,7 +4,7 @@ import CategoryNavigation from "../components/products/CategoryNavigation";
 import ProductCategorySection from "../components/products/ProductCategorySection";
 import ProductEnquiryCTA from "../components/products/ProductEnquiryCTA";
 import ProductsHero from "../components/products/ProductsHero";
-import AddressLines from "../components/common/AddressLines";
+import { CONTACT_GOOGLE_MAPS_URL } from "../components/contact/contactMaps";
 import { productCategories } from "../data/products";
 import { business } from "../data/business";
 
@@ -43,11 +43,8 @@ function Products() {
               {address.city}, {address.state}
             </p>
           </div>
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <address className="text-sm leading-6 text-slate-600 not-italic">
-              <AddressLines />
-            </address>
-            <a href={business.mapsUrl} target="_blank" rel="noreferrer" className="btn btn-secondary shrink-0">
+          <div className="flex justify-end sm:items-end">
+            <a href={CONTACT_GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary shrink-0">
               Get Directions
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>

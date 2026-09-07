@@ -2,7 +2,7 @@ import { ArrowUpRight, Boxes, Building2, Mail, MapPin, MessageCircle, Phone } fr
 import AddressLines from "../common/AddressLines";
 import { business } from "../../data/business";
 import { phoneHref } from "../../lib/display";
-import { CONTACT_GOOGLE_MAPS_URL } from "./contactMaps";
+import { CONTACT_GOOGLE_MAPS_EMBED_SRC, CONTACT_GOOGLE_MAPS_URL } from "./contactMaps";
 import ContactActions from "./ContactActions";
 
 const trustItems = [
@@ -84,13 +84,25 @@ function ContactEnquirySection() {
               <a
                 href={CONTACT_GOOGLE_MAPS_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-link mt-4"
               >
                 Get Directions
                 <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             </div>
+          </div>
+
+          <div className="mt-7 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgb(15_23_42/0.04),0_6px_16px_rgb(15_23_42/0.05)]">
+            <iframe
+              title={`${business.name} location on Google Maps`}
+              src={CONTACT_GOOGLE_MAPS_EMBED_SRC}
+              className="block h-[240px] w-full border-0 sm:h-[260px] lg:h-[280px]"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
           </div>
         </div>
       </div>

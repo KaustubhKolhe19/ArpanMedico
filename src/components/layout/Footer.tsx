@@ -4,11 +4,12 @@ import { business, navigationItems } from "../../data/business";
 import { createWhatsAppUrl } from "../../lib/whatsapp";
 import { phoneHref } from "../../lib/display";
 import AddressLines from "../common/AddressLines";
+import { CONTACT_GOOGLE_MAPS_EMBED_SRC, CONTACT_GOOGLE_MAPS_URL } from "../contact/contactMaps";
 
 function Footer() {
   return (
     <footer className="border-t border-white/10 bg-slate-950 text-slate-300">
-      <div className="site-container grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_1.1fr] lg:gap-14 lg:py-14">
+      <div className="site-container grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.1fr_0.85fr_1fr_1.15fr] lg:gap-10 lg:py-14">
         <div>
           <Link
             to="/"
@@ -23,6 +24,61 @@ function Footer() {
           <p className="mt-2 text-sm text-slate-500">
             {business.address.city}, {business.address.state}
           </p>
+          <div className="mt-5 flex items-center gap-2" aria-label="Social media">
+            {/* TODO: Replace with actual LinkedIn URL */}
+            <a
+              href="#"
+              onClick={(event) => event.preventDefault()}
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            >
+              <svg viewBox="0 0 24 24" className="size-[17px]" fill="currentColor" aria-hidden="true">
+                <path d="M5.1 3.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM3.5 8.5h3.2V20H3.5V8.5Zm5.1 0h3.05v1.57h.04c.42-.79 1.46-1.83 3.52-1.83 3.76 0 4.46 2.47 4.46 5.68V20h-3.2v-5.39c0-1.29-.02-2.94-1.97-2.94-1.97 0-2.27 1.42-2.27 2.85V20H8.6V8.5Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/arpan_medico_sangamner?stkn=dWg0emRod2VnYzFt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            >
+              <svg viewBox="0 0 24 24" className="size-[17px]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            {/* TODO: Replace with actual Facebook URL */}
+            <a
+              href="#"
+              onClick={(event) => event.preventDefault()}
+              aria-label="Facebook"
+              title="Facebook"
+              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            >
+              <svg viewBox="0 0 24 24" className="size-[17px]" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V4a22.7 22.7 0 0 0-2.47-.13c-2.45 0-4.13 1.5-4.13 4.25V10H7.4v3h2.7v8h3.4Z" />
+              </svg>
+            </a>
+            <a
+              href={createWhatsAppUrl(
+                "Hello Arpan Medico, I would like to enquire about your medical and surgical supplies. Please share the product details, availability, and pricing.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              title="WhatsApp"
+              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            >
+              <svg viewBox="0 0 24 24" className="size-[17px]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <path d="M20.5 3.5A11.8 11.8 0 0 0 3.4 19.8L2.5 22l2.3-.8A11.8 11.8 0 0 0 20.5 3.5Z" />
+                <path d="M8.3 6.9c.2-.2.5-.2.7.1l1 1.7c.2.3.1.6-.1.8l-.7.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.7c.2-.2.5-.3.8-.1l1.7 1c.3.2.3.5.1.7l-.5.7c-.4.6-1.1.9-1.8.7-3.6-1-5.8-3.2-6.8-6.8-.2-.7.1-1.4.7-1.8l.7-.5Z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div>
@@ -45,12 +101,9 @@ function Footer() {
 
         <div>
           <h2 className="section-eyebrow text-white">Contact</h2>
-          <address className="mt-4 text-sm leading-6 text-slate-400 not-italic">
-            <AddressLines />
-          </address>
           <a
             href={`mailto:${business.contact.email}`}
-            className="mt-3 block break-words text-sm text-slate-300 transition hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            className="mt-4 block break-words text-sm text-slate-300 transition hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
           >
             {business.contact.email}
           </a>
@@ -68,6 +121,31 @@ function Footer() {
           <a href={createWhatsAppUrl()} target="_blank" rel="noreferrer" className="btn btn-primary mt-5">
             <MessageCircle size={16} aria-hidden="true" />
             Enquire on WhatsApp
+          </a>
+        </div>
+
+        <div className="min-w-0">
+          <h2 className="section-eyebrow text-white">Location</h2>
+          <address className="mt-4 text-sm leading-6 text-slate-400 not-italic">
+            <AddressLines includeDistrict={false} />
+          </address>
+          <div className="mt-4 h-[180px] w-full max-w-[300px] overflow-hidden rounded-xl border border-white/10 sm:h-[160px]">
+            <iframe
+              title={`${business.name} location map`}
+              src={CONTACT_GOOGLE_MAPS_EMBED_SRC}
+              className="block h-full w-full border-0"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <a
+            href={CONTACT_GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex text-sm text-slate-300 transition hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+          >
+            View on Google Maps ↗
           </a>
         </div>
       </div>

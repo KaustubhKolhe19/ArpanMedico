@@ -15,7 +15,7 @@ import { phoneHref } from "../lib/display";
 function About() {
   const { address, contact } = business;
   const pageTitle = `${business.name} in ${address.city} | About`;
-  const pageDescription = `${business.name} in ${address.city}, ${address.state}, with Wholesale, Medicine, Surgical and Instrument categories.`;
+  const pageDescription = `${business.name} in ${address.city}, ${address.state}, with wholesale supply of medicines, surgical products and instruments.`;
 
   return (
     <>
@@ -33,20 +33,27 @@ function About() {
       <OwnerProfileSection compact />
 
       <section className="bg-white section-pad" aria-labelledby="company-introduction-heading">
-        <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] lg:gap-16">
-          <div>
+        <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-16">
+          <img
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=85"
+            alt="Professionally arranged medical supplies"
+            className="h-[300px] w-full rounded-2xl border border-slate-200 object-cover shadow-[0_8px_24px_rgb(15_23_42/0.06)] sm:h-[360px] lg:h-[500px]"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
+          <div className="max-w-2xl">
             <p className="section-eyebrow text-teal-700">Company introduction</p>
             <h2 id="company-introduction-heading" className="section-title text-slate-950">
               {business.description}
             </h2>
             <p className="mt-3 text-sm font-medium text-slate-500">Under the leadership of {business.owner}.</p>
-          </div>
-          <div className="space-y-4">
-            {business.introduction.map((paragraph) => (
-              <p key={paragraph} className="body-copy">
-                {paragraph}
-              </p>
-            ))}
+            <div className="mt-6 space-y-5">
+              {business.introduction.map((paragraph) => (
+                <p key={paragraph} className="body-copy">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>

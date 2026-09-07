@@ -1,6 +1,10 @@
 import { business } from "../../data/business";
 
-function AddressLines() {
+type AddressLinesProps = {
+  includeDistrict?: boolean;
+};
+
+function AddressLines({ includeDistrict = true }: AddressLinesProps) {
   const { address } = business;
   const lines = [
     address.line1,
@@ -8,7 +12,7 @@ function AddressLines() {
     address.landmark,
     address.street,
     `${address.city} - ${address.postalCode}`,
-    `Dist. ${address.district}`,
+    includeDistrict ? `Dist. ${address.district}` : "",
     `${address.state}, ${address.country}`,
   ].reduce<string[]>((unique, line) => {
     const value = line.trim();

@@ -54,7 +54,8 @@ function Hero() {
               {business.address.state}
             </p>
           </div>
-          <ol className="mt-1">
+          <p className="section-eyebrow mt-6 text-teal-300">Wholesale supply</p>
+          <ol className="mt-2">
             {business.categories.map((category, index) => (
               <li
                 key={category}

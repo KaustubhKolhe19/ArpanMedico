@@ -9,6 +9,13 @@ function BusinessIntro() {
         <div>
           <p className="section-eyebrow text-teal-700">About the business</p>
           <h2 className="section-title max-w-md text-slate-950">Surgical, Medical &amp; Hospital Supplies</h2>
+          <img
+            src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=85"
+            alt="Professionally arranged medical supplies"
+            className="mt-6 h-[190px] w-full max-w-[340px] rounded-xl border border-slate-200 object-cover shadow-[0_4px_14px_rgb(15_23_42/0.05)]"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
         </div>
         <div className="lg:pt-0.5">
           <p className="body-copy">{business.introduction[0]}</p>
