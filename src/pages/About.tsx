@@ -15,7 +15,24 @@ import { phoneHref } from "../lib/display";
 function About() {
   const { address, contact } = business;
   const pageTitle = `${business.name} in ${address.city} | About`;
-  const pageDescription = `${business.name} in ${address.city}, ${address.state}, with Wholesale, Medicine, Surgical and Instrument categories.`;
+  const pageDescription = `${business.name} in ${address.city}, ${address.state}, with wholesale supply of medicines, surgical products and instruments.`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    mainEntity: {
+      "@type": "Organization",
+      name: business.name,
+      founder: business.owner,
+      description: business.description,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: address.city,
+        addressRegion: address.state,
+        addressCountry: address.country,
+      },
+    },
+  };
 
   return (
     <>
@@ -27,35 +44,48 @@ function About() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${address.city}, ${address.state}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
       <AboutHero />
       <OwnerProfileSection compact />
 
       <section className="bg-white section-pad" aria-labelledby="company-introduction-heading">
-        <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] lg:gap-16">
-          <div>
+        <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-16">
+          <img
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=85"
+            alt="Professionally arranged medical supplies"
+            className="h-[300px] w-full rounded-2xl border border-slate-200 object-cover shadow-[0_8px_24px_rgb(15_23_42/0.06)] sm:h-[360px] lg:h-[500px]"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
+          <div className="max-w-2xl">
             <p className="section-eyebrow text-teal-700">Company introduction</p>
             <h2 id="company-introduction-heading" className="section-title text-slate-950">
               {business.description}
             </h2>
             <p className="mt-3 text-sm font-medium text-slate-500">Under the leadership of {business.owner}.</p>
-          </div>
-          <div className="space-y-4">
-            {business.introduction.map((paragraph) => (
-              <p key={paragraph} className="body-copy">
-                {paragraph}
-              </p>
-            ))}
+            <div className="mt-6 space-y-5">
+              {business.introduction.map((paragraph) => (
+                <p key={paragraph} className="body-copy">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <BusinessOverview />
-      <ContentList title="Our Specialities" items={specialties} columns={2} muted />
-      <ContentList title="Our Strength" items={strengths} featuredCount={4} />
-      <ContentList title="Why Choose Us" items={whyChooseUs} numbered muted />
-      <ContentList title="Industries We Serve" items={industries} compact />
+      <ContentList title="Our Specialities" items={specialties} columns={2} />
+      <ContentList title="Our Strength" items={strengths} featuredCount={4} muted />
+      <ContentList title="Why Choose Us" items={whyChooseUs} numbered />
+      <ContentList title="Industries We Serve" items={industries} compact muted />
       <LocalPresence />
 
       <section className="bg-slate-50" aria-labelledby="about-contact-heading">
@@ -121,7 +151,7 @@ function ContentList({ title, items, muted = false, columns = 1, numbered = fals
   const supporting = featuredCount ? items.slice(featuredCount) : [];
 
   return (
-    <section className={`${muted ? "bg-slate-50" : "bg-white"} section-pad`} aria-labelledby={headingId}>
+    <section className={`${muted ? "bg-[#f6f9fb]" : "bg-white"} section-pad`} aria-labelledby={headingId}>
       <div className="site-container">
         <p className="section-eyebrow text-teal-700">Arpan Medico</p>
         <h2 id={headingId} className="section-title text-slate-950">

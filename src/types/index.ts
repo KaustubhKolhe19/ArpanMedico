@@ -38,8 +38,7 @@ export type BusinessInfo = {
 export type ProductCategoryId =
   | "medicines"
   | "surgical-products"
-  | "medical-equipment-consumables"
-  | "healthcare-supplies";
+  | "instruments";
 
 export type ProductItem = {
   id: string;

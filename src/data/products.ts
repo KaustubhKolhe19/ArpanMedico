@@ -25,7 +25,7 @@ export const productCategories: readonly ProductCategory[] = [
   },
   {
     id: "surgical-products",
-    name: "Surgical Products",
+    name: "Surgical",
     iconIdentifier: "scissors",
     items: createProductItems("surgical-products", [
       "Sutures",
@@ -43,10 +43,10 @@ export const productCategories: readonly ProductCategory[] = [
     ]),
   },
   {
-    id: "medical-equipment-consumables",
-    name: "Medical Equipment & Consumables",
+    id: "instruments",
+    name: "Instruments",
     iconIdentifier: "stethoscope",
-    items: createProductItems("medical-equipment-consumables", [
+    items: createProductItems("instruments", [
       "Walkers",
       "Rehabilitation Products",
       "Face Masks",
@@ -55,13 +55,6 @@ export const productCategories: readonly ProductCategory[] = [
       "Hospital Consumables",
       "Medical Disposable Products",
       "Hospital Furniture",
-    ]),
-  },
-  {
-    id: "healthcare-supplies",
-    name: "Healthcare Supplies",
-    iconIdentifier: "hospital",
-    items: createProductItems("healthcare-supplies", [
       "Hospital Supplies",
       "Medical Store Supplies",
       "Corporate Healthcare Supplies",

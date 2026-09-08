@@ -63,7 +63,7 @@ export const homeKpis: readonly AnalyticsKpi[] = [
 
 const additionalKpis: readonly AnalyticsKpi[] = [
   { label: "Average Order Value", value: "₹4,346", iconIdentifier: "receipt" },
-  { label: "Active Business Categories", value: "4", iconIdentifier: "layers" },
+  { label: "Active Business Categories", value: "3", iconIdentifier: "layers" },
 ];
 
 export const analyticsDemoData: AnalyticsDemoData = {
@@ -78,9 +78,8 @@ export const analyticsDemoData: AnalyticsDemoData = {
   ],
   categoryPerformance: [
     { category: "Medicines", shortLabel: "Medicines", revenue: 6.2 },
-    { category: "Surgical Products", shortLabel: "Surgical", revenue: 5.1 },
-    { category: "Medical Equipment & Consumables", shortLabel: "Equipment", revenue: 4.0 },
-    { category: "Healthcare Supplies", shortLabel: "Healthcare", revenue: 3.3 },
+    { category: "Surgical", shortLabel: "Surgical", revenue: 5.1 },
+    { category: "Instruments", shortLabel: "Instruments", revenue: 7.3 },
   ],
   industryDistribution: [
     { industry: "Hospitals", percentage: 32 },

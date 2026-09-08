@@ -12,4 +12,5 @@ export const owner: OwnerProfile = {
   introduction: "Arpan Medico is a Sangamner-based business serving the surgical, medical and hospital supply segment.",
   businessFocus: business.description,
   focusAreas: ["Surgical", "Medical", "Hospital Supplies"],
+  photo: "/assets/owner/owner.png",
 };

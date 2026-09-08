@@ -8,7 +8,7 @@ function ProductsHero() {
     <PageHero
       eyebrow="Products & supplies"
       title="Medical, Surgical & Healthcare Supplies"
-      description={`Explore the product categories associated with ${business.name}'s business.`}
+      description="Wholesale Medical & Surgical Supply. Medicines, surgical products and instruments supplied for hospitals, clinics, pharmacies and healthcare organizations."
       action={
         <a
           href={createWhatsAppUrl(`Hello ${business.name}, I would like to enquire about your products.`)}

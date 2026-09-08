@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { owner } from "../../data/owner";
 
 type OwnerPortraitProps = {
@@ -6,41 +5,21 @@ type OwnerPortraitProps = {
 };
 
 function OwnerPortrait({ compact = false }: OwnerPortraitProps) {
-  const profilePhoto = owner.photo ?? "/images/business/owner/milan-pradip-fargade.webp";
-  const [hasPhoto, setHasPhoto] = useState(true);
-
   return (
-    <div
-      className={`w-full overflow-hidden bg-slate-950 text-white ${compact ? "max-w-[15.5rem]" : "max-w-[17.5rem]"}`}
+    <figure
+      className={`w-full overflow-hidden rounded-[0.875rem] border border-slate-200 bg-slate-100 shadow-[0_1px_2px_rgb(15_23_42/0.04),0_8px_20px_rgb(15_23_42/0.06)] ${
+        compact ? "max-w-[15.5rem]" : "max-w-[17.5rem]"
+      }`}
     >
-      {hasPhoto ? (
-        <img
-          src={profilePhoto}
-          alt={`${owner.name} - ${owner.designation}, ${owner.business}`}
-          className="aspect-[4/5] h-full w-full object-cover"
-          onError={() => setHasPhoto(false)}
-        />
-      ) : (
-        <div
-          className="flex aspect-[4/5] flex-col justify-between border border-white/10 p-6 sm:p-7"
-          aria-hidden="true"
-        >
-          <div>
-            <p className="section-eyebrow text-teal-300">{owner.designation}</p>
-            <span className="mt-5 block h-px w-8 bg-teal-600" />
-          </div>
-          <div>
-            <p className="text-[2.35rem] font-semibold leading-none tracking-[0.28em] text-teal-200 sm:text-[2.6rem]">
-              MPF
-            </p>
-            <p className="mt-5 text-sm font-medium leading-6 text-white">{owner.name}</p>
-            <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
-              {owner.business}
-            </p>
-          </div>
-        </div>
-      )}
-    </div>
+      <img
+        src={owner.photo}
+        alt={`${owner.name}, Business Owner of Arpan Medico`}
+        width={560}
+        height={700}
+        className="aspect-[4/5] h-auto w-full object-cover object-[center_18%]"
+        decoding="async"
+      />
+    </figure>
   );
 }
 

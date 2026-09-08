@@ -26,19 +26,19 @@ const industryIcons: Record<IndustryIconId, LucideIcon> = {
 
 function IndustryCategoryGrid() {
   return (
-    <section className="bg-white section-pad" aria-labelledby="industry-list-heading">
+    <section className="bg-slate-50 section-pad" aria-labelledby="industry-list-heading">
       <div className="site-container">
-        <div>
-          <p className="section-eyebrow text-teal-700">Customer types</p>
+        <div className="max-w-2xl">
+          <p className="section-eyebrow text-teal-700">Arpan Medico</p>
           <h2 id="industry-list-heading" className="section-title text-slate-950">
-            Healthcare organizations
+            Industries We Serve
           </h2>
-          <p className="mt-2 text-xs font-medium tracking-wide text-slate-400">
-            {industries.length} confirmed categories
+          <p className="mt-4 text-base leading-7 text-slate-500">
+            Supporting healthcare organizations with medical, surgical and hospital supply solutions.
           </p>
         </div>
 
-        <ul className="mt-7 grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {industries.map((industry) => {
             const Icon = industryIcons[industry.iconIdentifier];
 
@@ -48,10 +48,12 @@ function IndustryCategoryGrid() {
                   <span className="industry-card-icon" aria-hidden="true">
                     <Icon size={22} strokeWidth={1.75} />
                   </span>
-                  <h3 className="industry-card-title">{industry.name}</h3>
-                  <span className="industry-card-arrow" aria-hidden="true">
-                    <ArrowUpRight size={16} />
-                  </span>
+                  <div className="industry-card-footer">
+                    <h3 className="industry-card-title">{industry.name}</h3>
+                    <span className="industry-card-arrow" aria-hidden="true">
+                      <ArrowUpRight size={16} />
+                    </span>
+                  </div>
                 </article>
               </li>
             );

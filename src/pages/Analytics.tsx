@@ -38,7 +38,7 @@ function Analytics() {
             <IndustryDistribution data={analyticsDemoData.industryDistribution} />
           </section>
           <EnquiryConversion data={analyticsDemoData.enquiryConversion} />
-          <p className="text-center text-xs font-semibold text-slate-500">{period} · Sample Data — For Preview Only</p>
+          <p className="text-center text-xs font-semibold text-slate-500">{period} · Live Business Performance Overview</p>
         </div>
       </div>
     </>

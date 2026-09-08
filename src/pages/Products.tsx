@@ -4,7 +4,7 @@ import CategoryNavigation from "../components/products/CategoryNavigation";
 import ProductCategorySection from "../components/products/ProductCategorySection";
 import ProductEnquiryCTA from "../components/products/ProductEnquiryCTA";
 import ProductsHero from "../components/products/ProductsHero";
-import AddressLines from "../components/common/AddressLines";
+import { CONTACT_GOOGLE_MAPS_URL } from "../components/contact/contactMaps";
 import { productCategories } from "../data/products";
 import { business } from "../data/business";
 
@@ -12,6 +12,19 @@ function Products() {
   const { address } = business;
   const pageTitle = "Medical & Surgical Products | Arpan Medico Sangamner";
   const pageDescription = "Explore medical, surgical and healthcare supply categories associated with Arpan Medico in Sangamner.";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Medical & Surgical Product Categories",
+    numberOfItems: productCategories.length,
+    itemListElement: productCategories.map((category, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: category.name,
+      description: `Supplies including ${category.items.map((item) => item.name).join(", ")}`,
+    })),
+  };
 
   return (
     <>
@@ -23,6 +36,12 @@ function Products() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="/products" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content={`${address.city}, ${address.state}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
       <ProductsHero />
@@ -43,11 +62,8 @@ function Products() {
               {address.city}, {address.state}
             </p>
           </div>
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <address className="text-sm leading-6 text-slate-600 not-italic">
-              <AddressLines />
-            </address>
-            <a href={business.mapsUrl} target="_blank" rel="noreferrer" className="btn btn-secondary shrink-0">
+          <div className="flex justify-end sm:items-end">
+            <a href={CONTACT_GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary shrink-0">
               Get Directions
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>

@@ -9,11 +9,14 @@ import Contact from "./pages/Contact";
 import OwnerProfile from "./pages/OwnerProfile";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/common/ScrollToTop";
+import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
 const Analytics = lazy(() => import("./pages/Analytics"));
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-white text-slate-900">
         <Header />
         <main className="flex-1">
@@ -29,6 +32,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </BrowserRouter>
   );
