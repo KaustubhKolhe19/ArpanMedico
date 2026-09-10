@@ -1,4 +1,4 @@
-import { Menu, MessageCircle, Phone } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { business, navigationItems } from "../../data/business";
@@ -71,11 +71,7 @@ function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link to="/contact" className="btn btn-secondary min-h-8 min-w-[7.5rem] px-3 py-1.5 text-[0.8125rem]">
-            <Phone size={14} aria-hidden="true" />
-            Contact us
-          </Link>
-          <Link to="/contact" className="btn btn-primary min-h-8 min-w-[7.5rem] px-3.5 py-1.5 text-[0.8125rem]">
+          <Link to="/contact#contact-form" className="btn btn-primary min-h-8 min-w-[7.5rem] px-3.5 py-1.5 text-[0.8125rem]">
             <MessageCircle size={15} aria-hidden="true" />
             Enquiry
           </Link>

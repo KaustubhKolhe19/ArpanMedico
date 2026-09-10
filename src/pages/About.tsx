@@ -1,8 +1,15 @@
-import { Mail, Phone } from "lucide-react";
+import {
+  Award,
+  Building2,
+  CheckCircle2,
+  PackageCheck,
+  ShieldCheck,
+  Stethoscope,
+  Truck,
+} from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import AboutHero from "../components/about/AboutHero";
 import BusinessOverview from "../components/about/BusinessOverview";
-import LocalPresence from "../components/about/LocalPresence";
 import EnquiryCTA from "../components/common/EnquiryCTA";
 import { business } from "../data/business";
 import { industries } from "../data/industries";
@@ -10,14 +17,13 @@ import { specialties } from "../data/specialties";
 import { strengths } from "../data/strengths";
 import { whyChooseUs } from "../data/whyChooseUs";
 import OwnerProfileSection from "../components/owner/OwnerProfileSection";
-import { phoneHref } from "../lib/display";
 
 const businessId = "https://arpanmedico.com/#business";
 
 function About() {
-  const { address, contact } = business;
-  const pageTitle = `${business.name} in ${address.city} | About`;
-  const pageDescription = `${business.name} in ${address.city}, ${address.state}, with wholesale supply of medicines, surgical products and instruments.`;
+  const { address } = business;
+  const pageTitle = `${business.name} | About Surgical & Medical Wholesale Distributor Sangamner`;
+  const pageDescription = `${business.name} in ${address.city}, ${address.state} — Authorized wholesale supplier of genuine MNC pharmaceuticals, sterile surgical sutures, IV fluids, and hospital consumables directed by ${business.owner}.`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -45,82 +51,90 @@ function About() {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
+      {/* Hero Header */}
       <AboutHero />
+
+      {/* Owner / Leadership Section */}
       <OwnerProfileSection compact />
 
-      <section className="bg-white section-pad" aria-labelledby="company-introduction-heading">
-        <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-16">
-          <img
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=85"
-            alt="Professionally arranged medical supplies"
-            className="h-[300px] w-full rounded-2xl border border-slate-200 object-cover shadow-[0_8px_24px_rgb(15_23_42/0.06)] sm:h-[360px] lg:h-[500px]"
-            loading="lazy"
-            referrerPolicy="no-referrer"
-          />
-          <div className="max-w-2xl">
-            <p className="section-eyebrow text-teal-700">Company introduction</p>
-            <h2 id="company-introduction-heading" className="section-title text-slate-950">
+      {/* Company Overview Section with Medical Warehouse Visual */}
+      <section className="bg-white section-pad border-b border-slate-200/80" aria-labelledby="company-introduction-heading">
+        <div className="site-container grid gap-10 lg:grid-cols-12 lg:items-center">
+          
+          {/* Left Visual Card */}
+          <div className="lg:col-span-5">
+            <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-200/60">
+              <div className="relative overflow-hidden rounded-xl">
+                <img
+                  src="/company_overview.jpg"
+                  alt="Arpan Medico Corporate Distribution Headquarters"
+                  className="h-[320px] sm:h-[400px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Text Details */}
+          <div className="lg:col-span-7 max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-md bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-800 border border-teal-200/60">
+              <Building2 size={14} className="text-teal-600" />
+              <span>Company Overview</span>
+            </div>
+            <h2 id="company-introduction-heading" className="section-title mt-3 text-slate-950">
               {business.description}
             </h2>
-            <p className="mt-3 text-sm font-medium text-slate-500">Under the leadership of {business.owner}.</p>
-            <div className="mt-6 space-y-5">
+            <p className="mt-2 text-sm font-semibold text-teal-800">
+              Directed by visionary leader {business.owner}
+            </p>
+            <div className="mt-5 space-y-4">
               {business.introduction.map((paragraph) => (
-                <p key={paragraph} className="body-copy">
+                <p key={paragraph} className="text-sm leading-relaxed text-slate-600">
                   {paragraph}
                 </p>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      <BusinessOverview />
-      <ContentList title="Our Specialities" items={specialties} columns={2} />
-      <ContentList title="Our Strength" items={strengths} featuredCount={4} muted />
-      <ContentList title="Why Choose Us" items={whyChooseUs} numbered />
-      <ContentList title="Industries We Serve" items={industries} compact muted />
-      <LocalPresence />
-
-      <section className="bg-slate-50" aria-labelledby="about-contact-heading">
-        <div className="site-container grid gap-8 border-t border-slate-200 py-10 md:grid-cols-2 lg:py-12">
-          <div>
-            <p className="section-eyebrow text-teal-700">Contact information</p>
-            <h2 id="about-contact-heading" className="section-title text-slate-950">
-              Connect with {business.name}.
-            </h2>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2">
-            <a
-              href={`mailto:${contact.email}`}
-              className="text-sm font-medium text-slate-700 transition hover:text-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
-            >
-              <Mail size={15} className="text-teal-700" aria-hidden="true" />
-              <span className="section-eyebrow mt-3 block text-slate-400">Email</span>
-              <span className="mt-2 block break-words">{contact.email}</span>
-            </a>
-            <div>
-              <Phone size={15} className="text-teal-700" aria-hidden="true" />
-              <span className="section-eyebrow mt-3 block text-slate-400">Phone</span>
-              <div className="mt-2 grid gap-1.5">
-                {contact.phoneNumbers.map((phoneNumber) => (
-                  <a
-                    key={phoneNumber}
-                    href={phoneHref(phoneNumber)}
-                    className="block text-sm font-medium text-slate-700 transition hover:text-teal-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-                  >
-                    {phoneNumber}
-                  </a>
-                ))}
+            {/* Micro Badge Row */}
+            <div className="mt-6 flex flex-wrap gap-4 border-t border-slate-200 pt-5 text-xs">
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={16} className="text-teal-700" />
+                <span className="font-semibold text-slate-900">100% Genuine MNC Sourced</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Truck size={16} className="text-emerald-700" />
+                <span className="font-semibold text-slate-900">Same-Day Express Dispatch</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <PackageCheck size={16} className="text-cyan-700" />
+                <span className="font-semibold text-slate-900">Bulk Wholesale Rates</span>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
+      {/* Category Overview */}
+      <BusinessOverview />
+
+      {/* Specialties Section */}
+      <StyledContentGrid title="Our Core Specialties" items={specialties} icon={Stethoscope} />
+
+      {/* Strengths Section */}
+      <StyledContentGrid title="Key Operational Strengths" items={strengths} icon={Award} muted />
+
+      {/* Why Choose Us Section */}
+      <StyledContentGrid title="Why Healthcare Professionals Choose Us" items={whyChooseUs} icon={ShieldCheck} numbered />
+
+      {/* Industries Served */}
+      <StyledContentGrid title="Healthcare Sectors We Serve" items={industries} icon={Building2} muted />
+
+      {/* Enquiry CTA */}
       <EnquiryCTA
-        eyebrow="Enquiries"
-        title="Have an enquiry?"
-        description={`Contact ${business.name} in ${address.city}.`}
+        eyebrow="Direct Wholesale Enquiries"
+        title="Require Medical or Surgical Supplies?"
+        description={`Contact ${business.name} central distribution warehouse in ${address.city}.`}
         contactLink
         showCall={false}
       />
@@ -128,64 +142,52 @@ function About() {
   );
 }
 
-type ContentListProps = {
+{/* Enhanced Styled Card Grid Component */}
+type StyledContentGridProps = {
   title: string;
   items: readonly { id: string; name: string }[];
   muted?: boolean;
-  columns?: 1 | 2;
   numbered?: boolean;
-  featuredCount?: number;
-  compact?: boolean;
+  icon?: React.ElementType;
 };
 
-function ContentList({ title, items, muted = false, columns = 1, numbered = false, featuredCount, compact = false }: ContentListProps) {
+function StyledContentGrid({ title, items, muted = false, numbered = false, icon: Icon = CheckCircle2 }: StyledContentGridProps) {
   const headingId = `${title.toLowerCase().replace(/\s+/g, "-")}-heading`;
-  const featured = featuredCount ? items.slice(0, featuredCount) : items;
-  const supporting = featuredCount ? items.slice(featuredCount) : [];
 
   return (
-    <section className={`${muted ? "bg-[#f6f9fb]" : "bg-white"} section-pad`} aria-labelledby={headingId}>
+    <section className={`${muted ? "bg-slate-50" : "bg-white"} section-pad border-b border-slate-200/80`} aria-labelledby={headingId}>
       <div className="site-container">
-        <p className="section-eyebrow text-teal-700">Arpan Medico</p>
-        <h2 id={headingId} className="section-title text-slate-950">
-          {title}
-        </h2>
-        {compact ? (
-          <ul className="mt-5 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-slate-200 pt-5">
-            {items.map((item) => (
-              <li key={item.id} className="text-sm font-medium text-slate-700">
+        <div className="max-w-xl">
+          <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-800 uppercase tracking-wider">
+            <Icon size={15} className="text-teal-600" />
+            <span>Arpan Medico Capabilities</span>
+          </div>
+          <h2 id={headingId} className="section-title mt-1.5 text-slate-950">
+            {title}
+          </h2>
+        </div>
+
+        <div className="mt-8 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, index) => (
+            <div
+              key={item.id}
+              className="flex items-start gap-3.5 rounded-xl border border-slate-200/90 bg-white p-4 shadow-xs transition duration-200 hover:border-teal-500/40 hover:shadow-md"
+            >
+              {numbered ? (
+                <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-xs font-bold text-teal-800">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              ) : (
+                <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700">
+                  <Icon size={16} />
+                </div>
+              )}
+              <p className="text-xs font-semibold leading-relaxed text-slate-800 pt-1">
                 {item.name}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <>
-            <ul className={`mt-5 ${columns === 2 ? "grid sm:grid-cols-2 sm:gap-x-12" : "divide-y divide-slate-200 border-y border-slate-200"}`}>
-              {featured.map((item, index) => (
-                <li
-                  key={item.id}
-                  className={`flex items-baseline gap-4 py-3 text-sm font-medium leading-6 text-slate-700 ${columns === 2 ? "border-t border-slate-200" : ""}`}
-                >
-                  {numbered ? (
-                    <span className="w-6 shrink-0 text-[0.7rem] font-semibold tracking-[0.12em] text-teal-700">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  ) : (
-                    <span className="size-1.5 shrink-0 bg-teal-600" aria-hidden="true" />
-                  )}
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-            {supporting.length > 0 ? (
-              <ul className="mt-5 flex flex-wrap gap-x-7 gap-y-2.5 text-sm text-slate-500">
-                {supporting.map((item) => (
-                  <li key={item.id}>{item.name}</li>
-                ))}
-              </ul>
-            ) : null}
-          </>
-        )}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
