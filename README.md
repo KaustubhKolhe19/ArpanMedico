@@ -64,7 +64,7 @@ This project represents the official digital B2B web application for **Arpan Med
 - **Additional Phone Lines**: +91 9075735070 | +91 9767733323 | +91 8766040488
 - **Email Address**: arpanmedicosangamner@gmail.com
 - **Operating Hours**: Monday – Saturday: 9:00 AM – 8:30 PM (Counter Pickup Available)
-- **Google Maps Location**: [Open Location in Google Maps](https://maps.app.goo.gl/LYyZA3YopVZyLVSp8)
+- **Google Maps Location**: [Open Location in Google Maps](https://maps.app.goo.gl/Sn9fTmT7P4Jd6dE86)
 
 ---
 

@@ -9,7 +9,7 @@ function BrandsHero() {
         <p className="section-eyebrow text-teal-300">Brands &amp; products</p>
         <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
           <div className="max-w-2xl">
-            <h1 className="page-title">Trusted Healthcare Brands</h1>
+            <h1 className="page-title">Healthcare Brands Supplied by Arpan Medico</h1>
             <p className="mt-4 max-w-lg text-[0.975rem] leading-7 text-slate-300 sm:text-base">
               Explore the healthcare brands associated with {business.name}&apos;s product supply.
             </p>

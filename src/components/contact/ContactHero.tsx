@@ -11,8 +11,8 @@ function ContactHero() {
         <div className="mt-4 grid items-end gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:gap-12 lg:gap-16">
           <div className="min-w-0 max-w-3xl">
             <h1 className="text-[2.25rem] font-semibold leading-[1.12] tracking-[-0.028em] text-balance break-words hyphens-none sm:text-[2.5rem] md:text-[2.875rem] lg:text-[3.5rem]">
-              Let's talk about your
-              <span className="block">healthcare supply requirements.</span>
+              Contact Arpan Medico in
+              <span className="block">Sangamner</span>
             </h1>
             <p className="mt-4 max-w-lg text-base leading-7 text-slate-300">
               Send an enquiry, call our team, or visit {business.name} in {address.city}.

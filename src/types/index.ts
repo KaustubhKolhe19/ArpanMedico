@@ -32,7 +32,6 @@ export type BusinessInfo = {
   address: Address;
   location: string;
   contact: ContactInfo;
-  mapsUrl: string;
 };
 
 export type ProductCategoryId =
