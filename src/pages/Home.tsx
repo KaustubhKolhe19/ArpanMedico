@@ -6,7 +6,6 @@ import ContactCTA from "../components/home/ContactCTA";
 import Hero from "../components/home/Hero";
 import HomeBrandsSection from "../components/home/HomeBrandsSection";
 import IndustriesSection from "../components/home/IndustriesSection";
-import LocationSection from "../components/home/LocationSection";
 import SpecialtiesSection from "../components/home/SpecialtiesSection";
 import StrengthSection from "../components/home/StrengthSection";
 import WhyChooseSection from "../components/home/WhyChooseSection";
@@ -69,7 +68,6 @@ function Home() {
       <WhyChooseSection />
       <StrengthSection />
       <OwnerPreview />
-      <LocationSection />
       <ContactCTA />
     </>
   );

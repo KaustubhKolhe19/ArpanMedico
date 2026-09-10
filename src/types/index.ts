@@ -72,6 +72,8 @@ export type Industry = {
   id: string;
   name: string;
   iconIdentifier: IndustryIconId;
+  description?: string;
+  highlights?: readonly string[];
 };
 
 export type IndustryIconId =
@@ -87,6 +89,7 @@ export type IndustryIconId =
 export type ContentItem = {
   id: string;
   name: string;
+  description?: string;
   iconIdentifier?: string;
 };
 

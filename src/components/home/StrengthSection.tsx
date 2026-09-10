@@ -46,7 +46,7 @@ function StrengthSection() {
                     {item.name}
                   </h3>
                   <p className="mt-2 text-xs leading-5 text-slate-400">
-                    Core operational strength of Arpan Medico ensuring high satisfaction for medical clients.
+                    {item.description || "Core operational strength of Arpan Medico ensuring high satisfaction for medical clients."}
                   </p>
                 </div>
               </div>

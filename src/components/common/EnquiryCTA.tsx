@@ -1,7 +1,6 @@
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, MessageSquare, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { business } from "../../data/business";
-import { createWhatsAppUrl } from "../../lib/whatsapp";
 import { phoneHref } from "../../lib/display";
 
 type EnquiryCTAProps = {
@@ -17,9 +16,7 @@ function EnquiryCTA({
   eyebrow,
   title,
   description,
-  whatsappMessage,
   showCall = true,
-  contactLink = false,
 }: EnquiryCTAProps) {
   return (
     <section className="bg-teal-700 text-white" aria-labelledby="enquiry-cta-heading">
@@ -32,20 +29,13 @@ function EnquiryCTA({
           {description ? <p className="mt-3 max-w-xl text-sm leading-6 text-teal-50 sm:text-[0.975rem]">{description}</p> : null}
         </div>
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-          {contactLink ? (
-            <Link to="/contact" className="btn btn-on-dark">
-              <MessageCircle size={17} aria-hidden="true" />
-              Send an Enquiry
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          ) : (
-            <a href={createWhatsAppUrl(whatsappMessage)} target="_blank" rel="noreferrer" className="btn btn-on-dark">
-              <MessageCircle size={17} aria-hidden="true" />
-              Enquire on WhatsApp
-              <ArrowRight size={16} aria-hidden="true" />
-            </a>
-          )}
-          {showCall && !contactLink ? (
+          <Link to="/contact#contact-form" className="btn btn-on-dark">
+            <MessageSquare size={17} aria-hidden="true" />
+            <span>Start a Conversation</span>
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+
+          {showCall ? (
             <a href={phoneHref(business.contact.phone)} className="btn btn-outline-light">
               <Phone size={17} aria-hidden="true" />
               Call Us

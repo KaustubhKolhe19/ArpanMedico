@@ -471,3 +471,100 @@ button,
 a {
 	-webkit-tap-highlight-color: transparent;
 }
+
+/* -------------------------------------------------------------
+   Medical Animated Keyframes & Glassmorphism Utilities
+   ------------------------------------------------------------- */
+@keyframes ecg-draw {
+	0% {
+		stroke-dashoffset: 1000;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes float-slow {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes float-delayed {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(8px);
+	}
+}
+
+@keyframes heartbeat-pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	15% {
+		transform: scale(1.18);
+	}
+	30% {
+		transform: scale(1);
+	}
+	45% {
+		transform: scale(1.12);
+	}
+}
+
+@keyframes beacon-ping {
+	0% {
+		transform: scale(0.95);
+		opacity: 0.8;
+	}
+	50% {
+		transform: scale(1.5);
+		opacity: 0.4;
+	}
+	100% {
+		transform: scale(1.9);
+		opacity: 0;
+	}
+}
+
+@keyframes glow-pulse {
+	0%, 100% {
+		opacity: 0.4;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.7;
+		transform: scale(1.08);
+	}
+}
+
+.animate-ecg {
+	stroke-dasharray: 1000;
+	animation: ecg-draw 4s linear infinite;
+}
+
+.animate-float-slow {
+	animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+	animation: float-delayed 6s ease-in-out 1.5s infinite;
+}
+
+.animate-heartbeat {
+	animation: heartbeat-pulse 2.2s ease-in-out infinite;
+}
+
+.animate-beacon {
+	animation: beacon-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-glow-pulse {
+	animation: glow-pulse 4s ease-in-out infinite;
+}
+

@@ -18,7 +18,7 @@ function BrandShowcase() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-6 text-slate-500">
-            The following brand information has been confirmed by the client.
+            Supplying authentic products from world-leading healthcare &amp; pharmaceutical manufacturers.
           </p>
         </div>
 

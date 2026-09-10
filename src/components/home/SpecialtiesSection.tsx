@@ -63,7 +63,7 @@ function SpecialtiesSection() {
                     {item.name}
                   </h3>
                   <p className="mt-1 text-xs leading-5 text-slate-500">
-                    Verified business specialty of Arpan Medico serving hospitals and healthcare professionals.
+                    {item.description || "Verified business specialty of Arpan Medico serving hospitals and healthcare professionals."}
                   </p>
                 </div>
               </div>
