@@ -25,18 +25,6 @@ function Footer() {
             {business.address.city}, {business.address.state}
           </p>
           <div className="mt-5 flex items-center gap-2" aria-label="Social media">
-            {/* TODO: Replace with actual LinkedIn URL */}
-            <a
-              href="#"
-              onClick={(event) => event.preventDefault()}
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
-            >
-              <svg viewBox="0 0 24 24" className="size-[17px]" fill="currentColor" aria-hidden="true">
-                <path d="M5.1 3.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM3.5 8.5h3.2V20H3.5V8.5Zm5.1 0h3.05v1.57h.04c.42-.79 1.46-1.83 3.52-1.83 3.76 0 4.46 2.47 4.46 5.68V20h-3.2v-5.39c0-1.29-.02-2.94-1.97-2.94-1.97 0-2.27 1.42-2.27 2.85V20H8.6V8.5Z" />
-              </svg>
-            </a>
             <a
               href="https://www.instagram.com/arpan_medico_sangamner?stkn=dWg0emRod2VnYzFt"
               target="_blank"
@@ -49,18 +37,6 @@ function Footer() {
                 <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-            {/* TODO: Replace with actual Facebook URL */}
-            <a
-              href="#"
-              onClick={(event) => event.preventDefault()}
-              aria-label="Facebook"
-              title="Facebook"
-              className="flex size-9 items-center justify-center text-slate-400 transition-colors hover:text-teal-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
-            >
-              <svg viewBox="0 0 24 24" className="size-[17px]" fill="currentColor" aria-hidden="true">
-                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V4a22.7 22.7 0 0 0-2.47-.13c-2.45 0-4.13 1.5-4.13 4.25V10H7.4v3h2.7v8h3.4Z" />
               </svg>
             </a>
             <a
