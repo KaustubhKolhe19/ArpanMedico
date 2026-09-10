@@ -36,7 +36,6 @@ export const business: BusinessInfo = {
       return [this.phone, ...this.additionalPhoneNumbers];
     },
   },
-  mapsUrl: "https://maps.app.goo.gl/LYyZA3YopVZyLVSp8",
 };
 
 export const navigationItems: NavigationItem[] = [
