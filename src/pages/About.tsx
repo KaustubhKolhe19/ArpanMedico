@@ -12,6 +12,8 @@ import { whyChooseUs } from "../data/whyChooseUs";
 import OwnerProfileSection from "../components/owner/OwnerProfileSection";
 import { phoneHref } from "../lib/display";
 
+const businessId = "https://arpanmedico.com/#business";
+
 function About() {
   const { address, contact } = business;
   const pageTitle = `${business.name} in ${address.city} | About`;
@@ -21,16 +23,7 @@ function About() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     mainEntity: {
-      "@type": "Organization",
-      name: business.name,
-      founder: business.owner,
-      description: business.description,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: address.city,
-        addressRegion: address.state,
-        addressCountry: address.country,
-      },
+      "@id": businessId,
     },
   };
 

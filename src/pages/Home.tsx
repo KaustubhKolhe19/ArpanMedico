@@ -12,9 +12,9 @@ import StrengthSection from "../components/home/StrengthSection";
 import WhyChooseSection from "../components/home/WhyChooseSection";
 import OwnerPreview from "../components/owner/OwnerPreview";
 import { business } from "../data/business";
-import { phoneHref } from "../lib/display";
 
 const HomeBusinessInsights = lazy(() => import("../components/analytics/HomeBusinessInsights"));
+const businessId = "https://arpanmedico.com/#business";
 
 function Home() {
   const { address, contact } = business;
@@ -22,28 +22,21 @@ function Home() {
   const seoDescription = `${business.name} in ${address.city}, ${address.state}, ${address.country}. ${business.description}.`;
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "WholesaleStore", "LocalBusiness"],
+    "@id": businessId,
+    "@type": ["WholesaleStore", "LocalBusiness"],
     name: business.name,
+    url: "https://arpanmedico.com",
     description: business.description,
-    founder: {
-      "@type": "Person",
-      name: business.owner,
-    },
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
+      streetAddress: `${address.line2}, ${address.landmark}, ${address.street}`,
       addressLocality: address.city,
       postalCode: address.postalCode,
-      addressRegion: address.state,
+      addressRegion: `${address.district}, ${address.state}`,
       addressCountry: address.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 19.5761,
-      longitude: 74.207,
-    },
     email: contact.email,
-    telephone: contact.phoneNumbers.map(phoneHref),
+    telephone: contact.phoneNumbers.map((phoneNumber) => `+91${phoneNumber.replace(/\s/g, "")}`),
   };
 
   return (
@@ -61,8 +54,6 @@ function Home() {
         <meta name="twitter:description" content={seoDescription} />
         <meta name="geo.region" content="IN-MH" />
         <meta name="geo.placename" content={`${address.city}, ${address.district}, ${address.state}`} />
-        <meta name="geo.position" content="19.5761;74.2070" />
-        <meta name="ICBM" content="19.5761, 74.2070" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Hero />
