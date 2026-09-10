@@ -4,8 +4,10 @@ import ContactFinalCTA from "../components/contact/ContactFinalCTA";
 import ContactHero from "../components/contact/ContactHero";
 import { business } from "../data/business";
 
+const businessId = "https://arpanmedico.com/#business";
+
 function Contact() {
-  const { address, contact } = business;
+  const { address } = business;
   const pageTitle = `Contact ${business.name} | Surgical & Medical Supplies in ${address.city}`;
   const pageDescription = `Contact ${business.name} in ${address.city} for medical, surgical and hospital supply requirements. Call, email or send an enquiry on WhatsApp.`;
 
@@ -13,20 +15,7 @@ function Contact() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     mainEntity: {
-      "@id": "https://arpanmedico.com/#business",
-      "@type": ["WholesaleStore", "LocalBusiness"],
-      name: business.name,
-      url: "https://arpanmedico.com",
-      telephone: contact.phoneNumbers.map((phoneNumber) => `+91${phoneNumber}`),
-      email: contact.email,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
-        addressLocality: address.city,
-        postalCode: address.postalCode,
-        addressRegion: `${address.district}, ${address.state}`,
-        addressCountry: address.country,
-      },
+      "@id": businessId,
     },
   };
 
