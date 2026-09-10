@@ -1,12 +1,9 @@
 import { MapPin, MessageCircle, Phone } from "lucide-react";
-import { useState } from "react";
 import { business } from "../../data/business";
 import { createWhatsAppUrl } from "../../lib/whatsapp";
 import { displayCategory, phoneHref } from "../../lib/display";
 
 function Hero() {
-  const [hasLogo, setHasLogo] = useState(true);
-
   return (
     <section className="bg-slate-950 text-white">
       <div className="site-container hero-pad grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
@@ -36,18 +33,9 @@ function Hero() {
 
         <div className="border-t border-white/10 pt-7 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
           <div className="flex items-center gap-4 border-b border-white/10 pb-5">
-            {hasLogo ? (
-              <img
-                src="/images/logo/arpan-medico-logo.png"
-                alt={`${business.name} logo`}
-                className="h-11 w-auto max-w-40 object-contain"
-                onError={() => setHasLogo(false)}
-              />
-            ) : (
-              <span className="flex size-11 shrink-0 items-center justify-center bg-teal-700 text-base font-semibold text-white">
-                AM
-              </span>
-            )}
+            <span className="flex size-11 shrink-0 items-center justify-center bg-teal-700 text-base font-semibold text-white">
+              AM
+            </span>
             <p className="text-sm leading-6 text-slate-400">
               {business.address.city}
               <br />
