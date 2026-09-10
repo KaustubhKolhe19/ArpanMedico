@@ -40,7 +40,7 @@ function Industries() {
       </Helmet>
       <PageHero
         eyebrow="Industries we serve"
-        title={`Healthcare connections in ${business.address.city}.`}
+        title="Healthcare Industries Served by Arpan Medico"
         description={`${business.name} works with the following confirmed customer types and healthcare organizations.`}
         locationLabel={business.address.city}
         locationHint={`${business.address.state}, ${business.address.country}`}
