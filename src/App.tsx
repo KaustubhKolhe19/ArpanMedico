@@ -7,6 +7,7 @@ import Brands from "./pages/Brands";
 import Industries from "./pages/Industries";
 import Contact from "./pages/Contact";
 import OwnerProfile from "./pages/OwnerProfile";
+import NotFound from "./pages/NotFound";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/common/ScrollToTop";
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about-owner" element={<OwnerProfile />} />
             <Route path="/analytics" element={<Suspense fallback={<div className="site-container py-16 text-sm font-semibold text-slate-600">Loading analytics...</div>}><Analytics /></Suspense>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

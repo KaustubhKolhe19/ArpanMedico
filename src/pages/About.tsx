@@ -21,14 +21,19 @@ function About() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     mainEntity: {
-      "@type": "Organization",
+      "@id": "https://arpanmedico.com/#business",
+      "@type": ["WholesaleStore", "LocalBusiness"],
       name: business.name,
-      founder: business.owner,
+      url: "https://arpanmedico.com",
       description: business.description,
+      telephone: contact.phoneNumbers.map((phoneNumber) => `+91${phoneNumber}`),
+      email: contact.email,
       address: {
         "@type": "PostalAddress",
+        streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
         addressLocality: address.city,
-        addressRegion: address.state,
+        postalCode: address.postalCode,
+        addressRegion: `${address.district}, ${address.state}`,
         addressCountry: address.country,
       },
     },
@@ -39,11 +44,11 @@ function About() {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="/about" />
+        <link rel="canonical" href="https://arpanmedico.com/about" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="/about" />
+        <meta property="og:url" content="https://arpanmedico.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />

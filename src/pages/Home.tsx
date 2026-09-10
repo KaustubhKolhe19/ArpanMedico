@@ -12,7 +12,6 @@ import StrengthSection from "../components/home/StrengthSection";
 import WhyChooseSection from "../components/home/WhyChooseSection";
 import OwnerPreview from "../components/owner/OwnerPreview";
 import { business } from "../data/business";
-import { phoneHref } from "../lib/display";
 
 const HomeBusinessInsights = lazy(() => import("../components/analytics/HomeBusinessInsights"));
 
@@ -22,28 +21,21 @@ function Home() {
   const seoDescription = `${business.name} in ${address.city}, ${address.state}, ${address.country}. ${business.description}.`;
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "WholesaleStore", "LocalBusiness"],
+    "@id": "https://arpanmedico.com/#business",
+    "@type": ["WholesaleStore", "LocalBusiness"],
     name: business.name,
+    url: "https://arpanmedico.com",
     description: business.description,
-    founder: {
-      "@type": "Person",
-      name: business.owner,
-    },
     address: {
       "@type": "PostalAddress",
       streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
       addressLocality: address.city,
       postalCode: address.postalCode,
-      addressRegion: address.state,
+      addressRegion: `${address.district}, ${address.state}`,
       addressCountry: address.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 19.5761,
-      longitude: 74.207,
-    },
     email: contact.email,
-    telephone: contact.phoneNumbers.map(phoneHref),
+    telephone: contact.phoneNumbers.map((phoneNumber) => `+91${phoneNumber}`),
   };
 
   return (
@@ -51,10 +43,11 @@ function Home() {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
-        <link rel="canonical" href="/" />
+        <link rel="canonical" href="https://arpanmedico.com/" />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://arpanmedico.com/" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />

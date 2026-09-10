@@ -3,7 +3,6 @@ import ContactEnquirySection from "../components/contact/ContactEnquirySection";
 import ContactFinalCTA from "../components/contact/ContactFinalCTA";
 import ContactHero from "../components/contact/ContactHero";
 import { business } from "../data/business";
-import { phoneHref } from "../lib/display";
 
 function Contact() {
   const { address, contact } = business;
@@ -14,16 +13,18 @@ function Contact() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     mainEntity: {
-      "@type": "MedicalBusiness",
+      "@id": "https://arpanmedico.com/#business",
+      "@type": ["WholesaleStore", "LocalBusiness"],
       name: business.name,
-      telephone: contact.phoneNumbers.map(phoneHref),
+      url: "https://arpanmedico.com",
+      telephone: contact.phoneNumbers.map((phoneNumber) => `+91${phoneNumber}`),
       email: contact.email,
       address: {
         "@type": "PostalAddress",
         streetAddress: `${address.line1}, ${address.line2}, ${address.landmark}, ${address.street}`,
         addressLocality: address.city,
         postalCode: address.postalCode,
-        addressRegion: address.state,
+        addressRegion: `${address.district}, ${address.state}`,
         addressCountry: address.country,
       },
     },
@@ -34,11 +35,11 @@ function Contact() {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="/contact" />
+        <link rel="canonical" href="https://arpanmedico.com/contact" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="/contact" />
+        <meta property="og:url" content="https://arpanmedico.com/contact" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />

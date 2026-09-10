@@ -6,7 +6,6 @@ import MobileMenu from "./MobileMenu";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hasLogo, setHasLogo] = useState(true);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -34,20 +33,9 @@ function Header() {
           className="group flex min-w-0 items-center gap-2.5 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
           aria-label={`${business.name} home`}
         >
-          {hasLogo ? (
-            <img
-              src="/images/logo/arpan-medico-logo.png"
-              alt={`${business.name} Logo`}
-              loading="eager"
-              decoding="async"
-              className="h-7 w-auto max-w-28 object-contain"
-              onError={() => setHasLogo(false)}
-            />
-          ) : (
-            <span className="flex size-7 shrink-0 items-center justify-center bg-teal-700 text-xs font-bold text-white">
-              AM
-            </span>
-          )}
+          <span className="flex size-7 shrink-0 items-center justify-center bg-teal-700 text-xs font-bold text-white">
+            AM
+          </span>
           <span className="min-w-0">
             <span className="block truncate text-[0.9rem] font-semibold tracking-tight text-slate-950 sm:text-[0.95rem]">
               {business.name}
