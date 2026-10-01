@@ -23,18 +23,18 @@ function BrandsHero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-950/70 px-3.5 py-1.5 backdrop-blur-md">
             <Award size={14} className="text-teal-400" />
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-300">
-              Authorized Healthcare Brands • {address.city}, {address.state}
+                Brands &amp; Business Partners • {address.city}, {address.state}
             </span>
           </div>
 
           {/* Title */}
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Healthcare Brands &amp; <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200 bg-clip-text text-transparent">Medical Manufacturers</span>
+            Healthcare Brands Supplied by <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200 bg-clip-text text-transparent">Arpan Medico</span>
           </h1>
 
           {/* Subtitle */}
           <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8">
-            Wholesale distribution of 100% genuine multinational pharmaceutical products, surgical consumables, IV therapy solutions, and hospital supplies from top global medical brands.
+            Arpan Medico supplies medical, surgical and hospital products from leading healthcare companies and brands.
           </p>
 
           {/* Primary Action Button */}
@@ -57,8 +57,8 @@ function BrandsHero() {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">100% Genuine MNC</p>
-              <p className="text-[0.65rem] text-slate-400">Ethicon, Nipro, BD, Polymed</p>
+              <p className="text-xs font-bold text-white">Super Stockist</p>
+              <p className="text-[0.65rem] text-slate-400">Healthcare product lines</p>
             </div>
           </div>
 
@@ -67,8 +67,8 @@ function BrandsHero() {
               <Award size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Verified Sourcing</p>
-              <p className="text-[0.65rem] text-slate-400">Direct Factory Channels</p>
+              <p className="text-xs font-bold text-white">Dealer For</p>
+              <p className="text-[0.65rem] text-slate-400">Healthcare brands and products</p>
             </div>
           </div>
 
@@ -77,8 +77,8 @@ function BrandsHero() {
               <Verified size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">B2B Institutional Supply</p>
-              <p className="text-[0.65rem] text-slate-400">Hospitals &amp; Healthcare Facilities</p>
+              <p className="text-xs font-bold text-white">Hospital Product Lines</p>
+              <p className="text-[0.65rem] text-slate-400">Equipment and supplies</p>
             </div>
           </div>
         </div>

@@ -37,36 +37,57 @@ export type BusinessInfo = {
 export type ProductCategoryId =
   | "medicines"
   | "surgical-products"
-  | "instruments";
+  | "instruments"
+  | "hospital-beds"
+  | "patient-monitors"
+  | "hospital-equipment"
+  | "hospital-machines"
+  | "surgical-equipment"
+  | "mnc-company-equipment-products"
+  | "mobility-patient-care";
 
 export type ProductItem = {
   id: string;
   name: string;
   category: ProductCategoryId;
   iconIdentifier?: string;
+  image?: string;
+  verificationStatus?: "pending" | "verified";
 };
 
 export type ProductCategory = {
   id: ProductCategoryId;
   name: string;
+  description: string;
+  image?: string;
   iconIdentifier?: string;
   items: readonly ProductItem[];
+  linkTo?: string;
+  linkLabel?: string;
 };
 
 export type Brand = {
   id: string;
   name: string;
+  category: BrandCategory;
   displayName?: string;
   secondaryLabel?: string;
-  logo?: string;
+  logo: string;
   logoAlt?: string;
   website?: string;
   featured?: boolean;
+  type?: "company" | "brand" | "product";
+  verificationStatus?: "verified" | "needs-confirmation";
+  verificationNote?: string;
+  clientProvidedName?: string;
+  clientProvidedCategory?: BrandCategory;
   /** Category-style entry without a brand logo (e.g. other MNC brands). */
   isCategory?: boolean;
   /** Logo asset is designed for a dark plate; apply light-card blend treatment. */
   logoOnDark?: boolean;
 };
+
+export type BrandCategory = "Super Stockist" | "Dealer For" | "Additional" | "Product";
 
 export type Industry = {
   id: string;

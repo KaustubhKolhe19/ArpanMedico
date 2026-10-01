@@ -98,8 +98,8 @@ function Industries() {
                 <Truck size={20} />
               </div>
               <div>
-                <p className="text-xs font-bold text-white">Same-Day Express</p>
-                <p className="text-[0.65rem] text-slate-400">Sangamner &amp; MH Hub Dispatch</p>
+                <p className="text-xs font-bold text-white">Hospital Supplies</p>
+                <p className="text-[0.65rem] text-slate-400">Medical &amp; Surgical Products</p>
               </div>
             </div>
 
@@ -133,7 +133,7 @@ function Industries() {
               </div>
               <h3 className="mt-4 text-base font-bold text-slate-900">Emergency &amp; Scheduled Supply</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Same-day emergency fulfillment for critical surgical &amp; ICU supplies, alongside structured recurring stock replenishment.
+                Medical and surgical product enquiries for hospital and institutional requirements.
               </p>
             </div>
 

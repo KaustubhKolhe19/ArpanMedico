@@ -4,6 +4,7 @@ import BusinessCategories from "../components/home/BusinessCategories";
 import BusinessIntro from "../components/home/BusinessIntro";
 import ContactCTA from "../components/home/ContactCTA";
 import Hero from "../components/home/Hero";
+import HospitalSetupSection from "../components/home/HospitalSetupSection";
 import HomeBrandsSection from "../components/home/HomeBrandsSection";
 import IndustriesSection from "../components/home/IndustriesSection";
 import SpecialtiesSection from "../components/home/SpecialtiesSection";
@@ -17,8 +18,8 @@ const businessId = "https://arpanmedico.com/#business";
 
 function Home() {
   const { address, contact } = business;
-  const seoTitle = `${business.name} | ${business.categories.join(", ")} | ${address.city}`;
-  const seoDescription = `${business.name} in ${address.city}, ${address.state}, ${address.country}. ${business.description}.`;
+  const seoTitle = `${business.description} | ${business.name} ${address.city}`;
+  const seoDescription = `${business.name} in ${address.city}, ${address.state} supplies medical and surgical products, hospital supplies and hospital equipment, including hospital setup product lines.`;
   const structuredData = {
     "@context": "https://schema.org",
     "@id": businessId,
@@ -65,6 +66,7 @@ function Home() {
       </Suspense>
       <HomeBrandsSection />
       <IndustriesSection />
+      <HospitalSetupSection />
       <WhyChooseSection />
       <StrengthSection />
       <OwnerPreview />

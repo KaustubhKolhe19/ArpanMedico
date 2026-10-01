@@ -42,7 +42,7 @@ function SpecialtiesSection() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-6 text-slate-600">
-            Arpan Medico provides verified wholesale distributor capabilities tailored to meet urgent healthcare supply demands.
+            Arpan Medico supplies medical and surgical product categories for healthcare requirements.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ function SpecialtiesSection() {
                     {item.name}
                   </h3>
                   <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {item.description || "Verified business specialty of Arpan Medico serving hospitals and healthcare professionals."}
+                    {item.description || "Medical and surgical product lines for hospitals and healthcare professionals."}
                   </p>
                 </div>
               </div>

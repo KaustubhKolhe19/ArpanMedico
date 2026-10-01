@@ -2,15 +2,15 @@ import type { ContentItem } from "../types";
 
 export const specialties: readonly ContentItem[] = [
   {
-    id: "authorized-mnc-surgical-product-supplier",
-    name: "Authorized MNC Surgical Product Supplier",
-    description: "Sourcing 100% genuine sterile surgical products directly from top MNC healthcare manufacturers like Ethicon, Nipro, and BD.",
+    id: "medical-surgical-product-supply",
+    name: "Medical & Surgical Product Supply",
+    description: "Medical and surgical product lines, including products from brands such as Ethicon, Nipro, and BD.",
     iconIdentifier: "shield-check",
   },
   {
     id: "wholesale-medicine-distributor",
     name: "Wholesale Medicine Distributor",
-    description: "Bulk distribution of prescription pharmaceuticals, critical care medications, and essential drugs with verified quality control.",
+    description: "Prescription medicines, critical care medications, and essential pharmaceutical products.",
     iconIdentifier: "pill",
   },
   {
@@ -22,13 +22,13 @@ export const specialties: readonly ContentItem[] = [
   {
     id: "surgical-instruments-consumables",
     name: "Surgical Instruments & Consumables",
-    description: "Certified surgical sutures, needles, sterile gloves, wound dressings, IV cannulas, and precision surgical instruments.",
+    description: "Sutures, needles, gloves, wound dressings, IV cannulas, and surgical instruments.",
     iconIdentifier: "scissors",
   },
   {
-    id: "same-day-dispatch-facility",
-    name: "Same Day Dispatch Facility",
-    description: "Rapid order fulfillment and same-day dispatch from our central Sangamner hub for urgent hospital requirements.",
+    id: "hospital-supply-requirements",
+    name: "Hospital Supply Requirements",
+    description: "Medical, surgical, and hospital product requirements for healthcare facilities.",
     iconIdentifier: "truck",
   },
   {
@@ -40,19 +40,19 @@ export const specialties: readonly ContentItem[] = [
   {
     id: "competitive-wholesale-pricing",
     name: "Competitive Wholesale Pricing",
-    description: "Transparent, volume-tiered bulk pricing structures designed to maximize savings for healthcare institutions.",
+    description: "Wholesale product enquiries for healthcare institutions.",
     iconIdentifier: "tags",
   },
   {
-    id: "genuine-branded-healthcare-products",
-    name: "Genuine Branded Healthcare Products",
-    description: "Zero-compromise authenticity guarantee with batch-verified medical supplies sourced directly from licensed partners.",
+    id: "branded-healthcare-products",
+    name: "Branded Healthcare Products",
+    description: "Medical supply product lines from healthcare brands represented in Arpan Medico's portfolio.",
     iconIdentifier: "badge-check",
   },
   {
     id: "bulk-b2b-supply",
     name: "Bulk B2B Supply Network",
-    description: "High-volume inventory management and reliable fulfillment for multi-specialty hospitals, nursing homes, and pharmacies.",
+    description: "Medical and surgical product lines for hospitals, nursing homes, and pharmacies.",
     iconIdentifier: "boxes",
   },
   {
@@ -64,13 +64,13 @@ export const specialties: readonly ContentItem[] = [
   {
     id: "reliable-customer-support",
     name: "Reliable Support Desk",
-    description: "Dedicated phone and WhatsApp support desk providing instant stock availability, quotation assistance, and order tracking.",
+    description: "Contact Arpan Medico by phone or WhatsApp to discuss product requirements.",
     iconIdentifier: "headphones",
   },
   {
     id: "complete-hospital-supply-solutions",
     name: "Complete Hospital Supply Partner",
-    description: "One-stop wholesale distributor fulfilling end-to-end pharmaceutical, surgical, and consumable supply requirements.",
+    description: "Pharmaceutical, surgical, and consumable product categories for hospital supply requirements.",
     iconIdentifier: "hospital",
   },
 ];

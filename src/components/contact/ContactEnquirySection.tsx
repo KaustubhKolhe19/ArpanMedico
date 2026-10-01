@@ -47,6 +47,7 @@ function ContactEnquirySection() {
                   <p className="text-[0.68rem] font-bold uppercase tracking-wider text-slate-400">Email Address</p>
                   <a
                     href={`mailto:${contact.email}`}
+                    aria-label={`Email Arpan Medico at ${contact.email}`}
                     className="mt-0.5 block text-sm font-bold text-slate-900 hover:text-teal-700 transition-colors truncate"
                   >
                     {contact.email}
@@ -66,6 +67,7 @@ function ContactEnquirySection() {
                       <a
                         key={phoneNumber}
                         href={phoneHref(phoneNumber)}
+                        aria-label={`Call Arpan Medico at +91 ${phoneNumber}`}
                         className="hover:text-teal-700 transition-colors"
                       >
                         +91 {phoneNumber}
@@ -109,7 +111,7 @@ function ContactEnquirySection() {
                 </h3>
               </div>
               <p className="mt-1 text-xs text-slate-500">
-                New Navin Nagar Rd, opp. Merchant Bank, Vidhyanagar, Sangamner, Maharashtra 422605
+                <AddressLines />
               </p>
             </div>
 
@@ -117,6 +119,7 @@ function ContactEnquirySection() {
               href={CONTACT_GOOGLE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Open Arpan Medico's confirmed address in Google Maps"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-teal-700 shadow-xs"
             >
               <span>Get Directions on Google Maps</span>
@@ -140,10 +143,10 @@ function ContactEnquirySection() {
           <div className="flex flex-wrap items-center justify-between gap-4 bg-slate-900 px-6 py-3.5 text-xs text-slate-300">
             <div className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-teal-400 shrink-0" />
-              <span>Authorized Wholesale Medical &amp; Surgical Distributor</span>
+              <span>Medical &amp; Surgical Supplies</span>
             </div>
             <span className="text-slate-400 text-[0.72rem]">
-              Sangamner, District Ahilyanagar (Ahmednagar), MH 422605
+              {business.address.city}, District {business.address.district}, {business.address.state} {business.address.postalCode}
             </span>
           </div>
 

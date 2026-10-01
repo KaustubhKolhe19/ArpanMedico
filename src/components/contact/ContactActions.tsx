@@ -1,9 +1,10 @@
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { business } from "../../data/business";
 import { phoneHref } from "../../lib/display";
 import { createWhatsAppUrl } from "../../lib/whatsapp";
 
-const enquiryMessage = `Hello ${business.name}, I would like to enquire about a healthcare supply requirement.`;
+const enquiryMessage =
+  "Hello Arpan Medico, I would like to enquire about your medical and surgical supplies. Please share the product details, availability, and pricing.";
 
 function WhatsAppIcon({ className = "size-4" }: { className?: string }) {
   return (
@@ -28,19 +29,32 @@ function ContactActions({
   callClassName = "btn btn-secondary",
 }: ContactActionsProps) {
   return (
-    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
       <a
         href={createWhatsAppUrl(enquiryMessage)}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
+        aria-label="Send an enquiry to Arpan Medico on WhatsApp"
         className={`${whatsappClassName} min-h-11 w-full px-5 sm:w-auto lg:min-h-12 inline-flex items-center gap-2`}
       >
         <WhatsAppIcon className="size-4 text-white" />
-        Enquire on WhatsApp
+        Send Enquiry on WhatsApp
       </a>
-      <a href={phoneHref(business.contact.phone)} className={`${callClassName} min-h-11 w-full px-5 sm:w-auto lg:min-h-12 inline-flex items-center gap-2`}>
+      <a
+        href={phoneHref(business.contact.phone)}
+        aria-label={`Call Arpan Medico at +91 ${business.contact.phone}`}
+        className={`${callClassName} min-h-11 w-full px-5 sm:w-auto lg:min-h-12 inline-flex items-center gap-2`}
+      >
         <Phone size={17} aria-hidden="true" />
-        Call Us
+        Call Arpan Medico
+      </a>
+      <a
+        href={`mailto:${business.contact.email}`}
+        aria-label={`Email Arpan Medico at ${business.contact.email}`}
+        className={`${callClassName} min-h-11 w-full px-5 sm:w-auto lg:min-h-12 inline-flex items-center gap-2`}
+      >
+        <Mail size={17} aria-hidden="true" />
+        Email Us
       </a>
     </div>
   );

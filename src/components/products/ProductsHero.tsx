@@ -1,4 +1,4 @@
-import { ArrowRight, Award, MessageSquare, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, Award, Hospital, MessageSquare, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { business } from "../../data/business";
 
@@ -34,7 +34,7 @@ function ProductsHero() {
 
           {/* Subtitle */}
           <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8">
-            Complete inventory catalog of 100% genuine MNC prescription pharmaceuticals, sterile surgical sutures, IV cannulas, IV fluids, and hospital equipment supplied directly to medical institutions across Maharashtra.
+            Medical, surgical and hospital products for hospitals, clinics, healthcare professionals and institutional requirements in Sangamner.
           </p>
 
           {/* Primary Action Button */}
@@ -54,21 +54,21 @@ function ProductsHero() {
         <div className="mt-10 grid grid-cols-2 gap-3 border-t border-slate-800/80 pt-6 sm:grid-cols-3">
           <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
             <div className="flex size-9 items-center justify-center rounded-lg bg-teal-500/10 text-teal-300">
-              <ShieldCheck size={20} />
+              <Stethoscope size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">100% MNC Genuine</p>
-              <p className="text-[0.65rem] text-slate-400">Ethicon, Nipro, BD, Polymed</p>
+              <p className="text-xs font-bold text-white">Medical &amp; Surgical Products</p>
+              <p className="text-[0.65rem] text-slate-400">Healthcare requirements</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
             <div className="flex size-9 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-300">
-              <Truck size={20} />
+              <Hospital size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Same-Day Express</p>
-              <p className="text-[0.65rem] text-slate-400">Sangamner &amp; MH Regional Hub</p>
+              <p className="text-xs font-bold text-white">Hospital Supplies</p>
+              <p className="text-[0.65rem] text-slate-400">Equipment &amp; product lines</p>
             </div>
           </div>
 
@@ -77,8 +77,8 @@ function ProductsHero() {
               <Award size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Bulk B2B Rates</p>
-              <p className="text-[0.65rem] text-slate-400">Transparent Pricing Structure</p>
+              <p className="text-xs font-bold text-white">Institutional Requirements</p>
+              <p className="text-[0.65rem] text-slate-400">Medical &amp; hospital products</p>
             </div>
           </div>
         </div>

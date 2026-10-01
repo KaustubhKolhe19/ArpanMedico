@@ -1,4 +1,5 @@
-import { FlaskConical, Package, Stethoscope } from "lucide-react";
+import { ArrowRight, FlaskConical, Package, Stethoscope } from "lucide-react";
+import { Link } from "react-router-dom";
 import { business } from "../../data/business";
 import { displayCategory } from "../../lib/display";
 
@@ -31,6 +32,10 @@ function BusinessCategories() {
               );
             })}
           </ul>
+          <Link to="/products" className="btn-link mt-6 inline-flex text-sm font-semibold">
+            Explore medical and surgical products
+            <ArrowRight size={15} aria-hidden="true" />
+          </Link>
         </div>
         <img
           src="https://images.unsplash.com/photo-1561328165-f0b762a9508e?auto=format&fit=crop&w=1200&q=85"

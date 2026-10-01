@@ -11,7 +11,7 @@ function BrandIntro() {
           </h2>
         </div>
         <p className="body-copy lg:pt-8">
-          {business.name} is an authorized distributor and wholesale supplier of premier multinational pharmaceuticals, sterile surgical consumables, IV therapy solutions, and medical equipment. We partner with world-leading healthcare manufacturers to guarantee 100% authentic products for hospitals, clinics, and pharmacies.
+          {business.name} supplies medical, surgical, and hospital product lines, including products from the healthcare brands represented on this page, for hospitals, clinics, and pharmacies.
         </p>
       </div>
     </section>

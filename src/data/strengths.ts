@@ -9,8 +9,8 @@ export const strengths: readonly ContentItem[] = [
   },
   {
     id: "trusted-mnc-brands",
-    name: "Trusted MNC Brands",
-    description: "Authorized partnerships with globally recognized manufacturers including Ethicon, Nipro, BD, and Polymed.",
+    name: "Healthcare Brands & Product Lines",
+    description: "Healthcare brands and product lines represented in Arpan Medico's portfolio, including Ethicon, Nipro, BD, and Polymed.",
     iconIdentifier: "building",
   },
   {

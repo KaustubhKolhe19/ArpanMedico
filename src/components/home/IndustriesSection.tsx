@@ -17,7 +17,7 @@ const industryDescriptions: Record<string, string> = {
   "medical-stores":
     "Bulk wholesale distribution of branded pharmaceutical inventory and healthcare products at competitive rates for retail medical stores.",
   "diagnostic-laboratories":
-    "Stocking certified collection tubes, sterile gloves, diagnostic reagents, and laboratory consumables for clinical testing facilities.",
+    "Medical and surgical product requirements for clinical testing facilities.",
 };
 
 function IndustriesSection() {

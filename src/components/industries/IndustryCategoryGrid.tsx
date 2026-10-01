@@ -34,7 +34,7 @@ function IndustryCategoryGrid() {
             Sectors We Support Across Maharashtra
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            Delivering 100% genuine MNC pharmaceuticals, surgical consumables, and hospital supplies tailored to specific healthcare environments.
+            Medical, surgical, and hospital product categories for a range of healthcare environments.
           </p>
         </div>
 
