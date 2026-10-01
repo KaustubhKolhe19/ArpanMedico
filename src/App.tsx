@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Brands from "./pages/Brands";
 import Industries from "./pages/Industries";
+import HospitalSetup from "./pages/HospitalSetup";
 import Contact from "./pages/Contact";
 import OwnerProfile from "./pages/OwnerProfile";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/brands" element={<Brands />} />
             <Route path="/industries" element={<Industries />} />
+            <Route path="/hospital-setup" element={<HospitalSetup />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about-owner" element={<OwnerProfile />} />
             <Route path="/analytics" element={<Suspense fallback={<div className="site-container py-16 text-sm font-semibold text-slate-600">Loading analytics...</div>}><Analytics /></Suspense>} />

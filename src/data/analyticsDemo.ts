@@ -55,31 +55,31 @@ export function formatLakhs(value: number): string {
 }
 
 export const homeKpis: readonly AnalyticsKpi[] = [
-  { label: "Total Revenue", value: "₹18.6L", iconIdentifier: "indian-rupee" },
+  { label: "Total Revenue", value: "₹5.48Cr", iconIdentifier: "indian-rupee" },
   { label: "Total Orders", value: "428", iconIdentifier: "shopping-bag" },
   { label: "Total Enquiries", value: "672", iconIdentifier: "message-circle" },
   { label: "Conversion Rate", value: "63.7%", iconIdentifier: "percent" },
 ];
 
 const additionalKpis: readonly AnalyticsKpi[] = [
-  { label: "Average Order Value", value: "₹4,346", iconIdentifier: "receipt" },
+  { label: "Average Order Value", value: "₹1,28,037", iconIdentifier: "receipt" },
   { label: "Active Business Categories", value: "3", iconIdentifier: "layers" },
 ];
 
 export const analyticsDemoData: AnalyticsDemoData = {
   kpis: [...homeKpis, ...additionalKpis],
   monthlyMetrics: [
-    { month: "April", monthShort: "Apr", revenue: 2.4, orders: 54 },
-    { month: "May", monthShort: "May", revenue: 2.7, orders: 61 },
-    { month: "June", monthShort: "Jun", revenue: 2.9, orders: 66 },
-    { month: "July", monthShort: "Jul", revenue: 3.1, orders: 72 },
-    { month: "August", monthShort: "Aug", revenue: 3.4, orders: 78 },
-    { month: "September", monthShort: "Sep", revenue: 4.1, orders: 97 },
+    { month: "April", monthShort: "Apr", revenue: 82, orders: 54 },
+    { month: "May", monthShort: "May", revenue: 86, orders: 61 },
+    { month: "June", monthShort: "Jun", revenue: 90, orders: 66 },
+    { month: "July", monthShort: "Jul", revenue: 93, orders: 72 },
+    { month: "August", monthShort: "Aug", revenue: 97, orders: 78 },
+    { month: "September", monthShort: "Sep", revenue: 100, orders: 97 },
   ],
   categoryPerformance: [
-    { category: "Medicines", shortLabel: "Medicines", revenue: 6.2 },
-    { category: "Surgical", shortLabel: "Surgical", revenue: 5.1 },
-    { category: "Instruments", shortLabel: "Instruments", revenue: 7.3 },
+    { category: "Medicines", shortLabel: "Medicines", revenue: 185 },
+    { category: "Surgical", shortLabel: "Surgical", revenue: 160 },
+    { category: "Instruments", shortLabel: "Instruments", revenue: 203 },
   ],
   industryDistribution: [
     { industry: "Hospitals", percentage: 32 },

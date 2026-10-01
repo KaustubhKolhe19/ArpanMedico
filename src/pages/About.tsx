@@ -23,7 +23,7 @@ const businessId = "https://arpanmedico.com/#business";
 function About() {
   const { address } = business;
   const pageTitle = `${business.name} | About Surgical & Medical Wholesale Distributor Sangamner`;
-  const pageDescription = `${business.name} in ${address.city}, ${address.state} — Authorized wholesale supplier of genuine MNC pharmaceuticals, sterile surgical sutures, IV fluids, and hospital consumables directed by ${business.owner}.`;
+  const pageDescription = `${business.name} in ${address.city}, ${address.state} supplies medical, surgical, and hospital products. Led by ${business.owner}.`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -99,11 +99,11 @@ function About() {
             <div className="mt-6 flex flex-wrap gap-4 border-t border-slate-200 pt-5 text-xs">
               <div className="flex items-center gap-2">
                 <ShieldCheck size={16} className="text-teal-700" />
-                <span className="font-semibold text-slate-900">100% Genuine MNC Sourced</span>
+                <span className="font-semibold text-slate-900">Healthcare Products</span>
               </div>
               <div className="flex items-center gap-2">
                 <Truck size={16} className="text-emerald-700" />
-                <span className="font-semibold text-slate-900">Same-Day Express Dispatch</span>
+                <span className="font-semibold text-slate-900">Medical &amp; Surgical Supplies</span>
               </div>
               <div className="flex items-center gap-2">
                 <PackageCheck size={16} className="text-cyan-700" />

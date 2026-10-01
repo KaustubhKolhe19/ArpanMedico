@@ -42,7 +42,7 @@ function Footer() {
             </div>
             <div>
               <h3 className="text-base font-bold text-white tracking-wide">
-                Authorized Wholesale Healthcare Partner
+                Surgical, Medical &amp; Hospital Supplies
               </h3>
               <p className="text-xs text-slate-400 mt-0.5">
                 Bulk MNC Pharmaceutical, Surgical Sutures &amp; Hospital Consumables Distribution in Sangamner &amp; MH.
@@ -92,15 +92,15 @@ function Footer() {
           </Link>
 
           <p className="text-xs leading-relaxed text-slate-400 max-w-sm">
-            Arpan Medico is Sangamner&apos;s leading wholesale distributor of authentic MNC surgical sutures, IV fluids, critical care items, and hospital consumables under the leadership of <strong className="text-slate-200">{business.owner}</strong>.
+            Arpan Medico supplies medical, surgical, and hospital products in Sangamner under the leadership of <strong className="text-slate-200">{business.owner}</strong>.
           </p>
 
           <div className="pt-2 flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-md bg-teal-950/80 border border-teal-500/30 px-2.5 py-1 text-[0.7rem] font-medium text-teal-300">
-              <Truck size={13} /> Same-Day Dispatch
+              <Truck size={13} /> Hospital Setup
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-950/80 border border-emerald-500/30 px-2.5 py-1 text-[0.7rem] font-medium text-emerald-300">
-              <ShieldCheck size={13} /> 100% Genuine MNC
+              <ShieldCheck size={13} /> Healthcare Products
             </span>
           </div>
 
@@ -176,11 +176,11 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Authorized MNC Brands (2.5 cols) */}
+        {/* Column 3: Healthcare Brands (2.5 cols) */}
         <div className="space-y-4 lg:col-span-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">Authorized MNC Partners</h4>
+          <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">Healthcare Brands &amp; Product Lines</h4>
           <p className="text-[0.7rem] text-slate-400">
-            Certified distributor of genuine MNC healthcare manufacturers:
+            Brands and product lines represented in Arpan Medico&apos;s portfolio:
           </p>
           <div className="flex flex-wrap gap-1.5">
             {mncBrandsList.map((brand) => (

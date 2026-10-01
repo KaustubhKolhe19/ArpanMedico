@@ -1,10 +1,10 @@
 import type { ContentItem } from "../types";
 
 export const whyChooseUs: readonly ContentItem[] = [
-  { id: "authorized-supplier-leading-mnc-brands", name: "Authorized Supplier of Leading MNC Brands", iconIdentifier: "badge-check" },
+  { id: "healthcare-brands-product-lines", name: "Healthcare Brands & Product Lines", iconIdentifier: "badge-check" },
   { id: "genuine-quality-assured-products", name: "Genuine & Quality-Assured Products", iconIdentifier: "shield-check" },
   { id: "wholesale-pricing", name: "Wholesale Pricing", iconIdentifier: "tags" },
-  { id: "same-day-dispatch", name: "Same Day Dispatch", iconIdentifier: "truck" },
+  { id: "hospital-setup-products", name: "Hospital Setup Products", iconIdentifier: "hospital" },
   { id: "large-product-inventory", name: "Large Product Inventory", iconIdentifier: "boxes" },
   { id: "reliable-delivery-network", name: "Reliable Delivery Network", iconIdentifier: "route" },
   { id: "dedicated-customer-support", name: "Dedicated Customer Support", iconIdentifier: "headphones" },

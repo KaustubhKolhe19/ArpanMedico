@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import BrandEnquiryCTA from "../components/brands/BrandEnquiryCTA";
-import BrandIntro from "../components/brands/BrandIntro";
 import BrandShowcase from "../components/brands/BrandShowcase";
 import BrandsHero from "../components/brands/BrandsHero";
 import { business } from "../data/business";
@@ -43,7 +42,6 @@ function Brands() {
       </Helmet>
 
       <BrandsHero />
-      <BrandIntro />
       <BrandShowcase />
       <BrandEnquiryCTA />
     </>

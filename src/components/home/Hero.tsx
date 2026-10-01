@@ -1,5 +1,4 @@
 import {
-  Activity,
   Award,
   CheckCircle2,
   ChevronRight,
@@ -42,21 +41,21 @@ function Hero() {
               <span className="relative inline-flex size-2.5 rounded-full bg-teal-400" />
             </span>
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-300">
-              Authorized MNC Healthcare Partner • {business.address.city}
+              Medical, Surgical &amp; Hospital Supplies • {business.address.city}
             </span>
           </div>
 
           {/* Main Title */}
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-            Wholesale Medical &amp; <br className="hidden sm:inline" />
+            Surgical, Medical &amp; <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200 bg-clip-text text-transparent">
-              Surgical Supplies
+              Hospital Supplies
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8">
-            Sangamner&apos;s trusted wholesale distributor of 100% genuine MNC pharmaceuticals, sterile surgical sutures, IV fluids, and hospital equipment for healthcare facilities across Maharashtra.
+            Medical and surgical products, hospital supplies, and equipment for healthcare requirements in Sangamner.
           </p>
 
           {/* CTA Buttons */}
@@ -82,12 +81,12 @@ function Hero() {
           {/* Trust Indicators */}
           <div className="mt-7 flex flex-wrap items-center gap-y-2 gap-x-6 border-t border-slate-800/80 pt-6 text-xs text-slate-400">
             <div className="flex items-center gap-2">
-              <ShieldCheck size={15} className="text-emerald-400" aria-hidden="true" />
-              <span>100% Authentic MNC Sourced</span>
+              <Stethoscope size={15} className="text-emerald-400" aria-hidden="true" />
+              <span>Medical &amp; Surgical Products</span>
             </div>
             <div className="flex items-center gap-2">
               <Truck size={15} className="text-cyan-400" aria-hidden="true" />
-              <span>Same-Day Dispatch Guarantee</span>
+              <span>Hospital Supply &amp; Setup Requirements</span>
             </div>
           </div>
         </div>
@@ -101,17 +100,16 @@ function Hero() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-4">
               <div className="flex items-center gap-3">
                 <div className="flex size-9 items-center justify-center rounded-lg bg-teal-500/10 text-teal-400">
-                  <Activity size={20} className="animate-heartbeat" aria-hidden="true" />
+                  <Stethoscope size={20} aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white tracking-wide">24/7 MEDICAL SUPPLY READINESS</h3>
-                  <p className="text-xs text-slate-400">Sangamner Central Warehouse</p>
+                  <h3 className="text-sm font-bold text-white tracking-wide">MEDICAL &amp; HOSPITAL SUPPLIES</h3>
+                  <p className="text-xs text-slate-400">{business.address.city}, {business.address.state}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 rounded-full bg-emerald-950/80 px-2.5 py-1 text-[0.7rem] font-semibold text-emerald-400 border border-emerald-500/30">
-                <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                ACTIVE DISPATCH
+              <div className="flex items-center gap-1.5 rounded-full bg-teal-950/80 px-2.5 py-1 text-[0.7rem] font-semibold text-teal-300 border border-teal-500/30">
+                HEALTHCARE
               </div>
             </div>
 
@@ -122,9 +120,9 @@ function Hero() {
               
               <div className="relative z-10 flex items-center justify-between text-[0.65rem] font-mono text-slate-400">
                 <span className="flex items-center gap-1 text-teal-400">
-                  <HeartPulse size={12} className="animate-heartbeat" /> INVENTORY PULSE: 72 BPM
+                  <HeartPulse size={12} /> MEDICAL • SURGICAL • HOSPITAL
                 </span>
-                <span>STATUS: OPERATIONAL</span>
+                <span>{business.address.city}</span>
               </div>
 
               {/* Animated ECG SVG Line */}
@@ -187,16 +185,16 @@ function Hero() {
             {/* Quick Metrics Bar */}
             <div className="mt-5 grid grid-cols-3 gap-2 border-t border-slate-800 pt-4 text-center">
               <div className="rounded-lg bg-slate-950/70 p-2.5 border border-slate-800">
-                <p className="text-base font-bold text-teal-300">100%</p>
-                <p className="text-[0.68rem] font-medium text-slate-300">Genuine Sourced</p>
+                <p className="text-base font-bold text-teal-300">Medical</p>
+                <p className="text-[0.68rem] font-medium text-slate-300">Supplies</p>
               </div>
               <div className="rounded-lg bg-slate-950/70 p-2.5 border border-slate-800">
-                <p className="text-base font-bold text-emerald-300">7+ MNC</p>
-                <p className="text-[0.68rem] font-medium text-slate-300">Direct Partners</p>
+                <p className="text-base font-bold text-emerald-300">Surgical</p>
+                <p className="text-[0.68rem] font-medium text-slate-300">Supplies</p>
               </div>
               <div className="rounded-lg bg-slate-950/70 p-2.5 border border-slate-800">
-                <p className="text-base font-bold text-cyan-300">Same-Day</p>
-                <p className="text-[0.68rem] font-medium text-slate-300">Express Dispatch</p>
+                <p className="text-base font-bold text-cyan-300">Hospital</p>
+                <p className="text-[0.68rem] font-medium text-slate-300">Equipment</p>
               </div>
             </div>
           </div>
@@ -207,8 +205,8 @@ function Hero() {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Ethicon, Nipro, BD &amp; Polymed</p>
-              <p className="text-[0.65rem] text-slate-400">Direct MNC Distribution Partner</p>
+              <p className="text-xs font-bold text-white">Healthcare Brands</p>
+              <p className="text-[0.65rem] text-slate-400">Medical &amp; surgical product lines</p>
             </div>
           </div>
 
@@ -218,8 +216,8 @@ function Hero() {
               <Truck size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Rapid Dispatch Network</p>
-              <p className="text-[0.65rem] text-slate-400">Sangamner &amp; Ahilyanagar Region</p>
+              <p className="text-xs font-bold text-white">Hospital Setup</p>
+              <p className="text-[0.65rem] text-slate-400">Equipment &amp; supply requirements</p>
             </div>
           </div>
 

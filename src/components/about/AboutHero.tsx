@@ -33,7 +33,7 @@ function AboutHero() {
 
           {/* Subtitle */}
           <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8">
-            Sangamner&apos;s premier authorized wholesale distributor of genuine MNC pharmaceuticals, sterile surgical sutures, IV fluids, and hospital consumables. Founded &amp; directed by <strong className="text-white">{business.owner}</strong>.
+            Arpan Medico supplies medical, surgical, and hospital products in Sangamner. Founded &amp; directed by <strong className="text-white">{business.owner}</strong>.
           </p>
 
           {/* Action CTAs */}
@@ -64,8 +64,8 @@ function AboutHero() {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">100% Genuine</p>
-              <p className="text-[0.65rem] text-slate-400">MNC Direct Sourced</p>
+              <p className="text-xs font-bold text-white">Medical Supplies</p>
+              <p className="text-[0.65rem] text-slate-400">Surgical &amp; Hospital Products</p>
             </div>
           </div>
 
@@ -74,8 +74,8 @@ function AboutHero() {
               <Truck size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Same-Day Dispatch</p>
-              <p className="text-[0.65rem] text-slate-400">Sangamner &amp; MH</p>
+              <p className="text-xs font-bold text-white">Hospital Supplies</p>
+              <p className="text-[0.65rem] text-slate-400">Products for Healthcare</p>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ function AboutHero() {
               <Award size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">7+ MNC Brands</p>
+              <p className="text-xs font-bold text-white">Healthcare Brands</p>
               <p className="text-[0.65rem] text-slate-400">Ethicon, Nipro, BD</p>
             </div>
           </div>
@@ -94,8 +94,8 @@ function AboutHero() {
               <MapPin size={20} />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Kadlag Complex</p>
-              <p className="text-[0.65rem] text-slate-400">Sangamner - 422605</p>
+              <p className="text-xs font-bold text-white">{business.address.line2}</p>
+              <p className="text-[0.65rem] text-slate-400">{business.address.city} - {business.address.postalCode}</p>
             </div>
           </div>
         </div>

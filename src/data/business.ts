@@ -7,9 +7,9 @@ export const business: BusinessInfo = {
   owner: "Milan Pradip Fargade",
   description: "Surgical, Medical & Hospital Supplies",
   introduction: [
-    "Arpan Medico is a trusted wholesale supplier of medicines, surgical instruments, hospital consumables, and healthcare products based in Sangamner, Maharashtra. Under the leadership of Milan Pradip Fargade, the company is committed to providing genuine MNC healthcare products, competitive pricing, and prompt service to hospitals, clinics, pharmacies, and corporate healthcare organizations.",
-    "With a strong distribution network and partnerships with leading medical brands, Arpan Medico ensures same-day dispatch, quality assurance, and reliable delivery. The company's customer-first approach has made it a preferred destination for healthcare professionals seeking authentic surgical products and pharmaceutical supplies.",
-    "Arpan Medico is an authorized supplier of premium MNC surgical products, injectable medicines, IV fluids, rehabilitation products, and hospital consumables. We cater to hospitals, medical stores, clinics, diagnostic centers, corporate healthcare organizations, and pharmaceutical businesses with a wide range of quality products.",
+    "Arpan Medico supplies medicines, surgical instruments, hospital consumables, and healthcare products from Sangamner, Maharashtra. The business is led by Milan Pradip Fargade and serves hospitals, clinics, pharmacies, and corporate healthcare organizations.",
+    "Arpan Medico's medical and surgical product lines include products from healthcare brands represented in its portfolio, for hospitals, clinics, pharmacies, and other healthcare organizations.",
+    "Arpan Medico supplies MNC surgical products, injectable medicines, IV fluids, rehabilitation products, and hospital consumables. We cater to hospitals, medical stores, clinics, diagnostic centers, corporate healthcare organizations, and pharmaceutical businesses with a wide range of products.",
     "Our focus is on providing genuine products, competitive wholesale pricing, quick order processing, and dependable customer support to healthcare professionals across Maharashtra.",
   ],
   categories: ["Medicines", "Surgical", "Instruments"],
@@ -44,5 +44,6 @@ export const navigationItems: NavigationItem[] = [
   { label: "Products", to: "/products" },
   { label: "Brands", to: "/brands" },
   { label: "Industries", to: "/industries" },
+  { label: "Hospital Setup", to: "/hospital-setup" },
   { label: "Contact", to: "/contact" },
 ];

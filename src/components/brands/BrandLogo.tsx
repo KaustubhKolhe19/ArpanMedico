@@ -42,6 +42,11 @@ function BrandLogo({
   const resolved = findBrand(brand.id) ?? brand;
   const label = getBrandLabel(resolved);
   const showLogo = Boolean(resolved.logo) && !logoFailed;
+  const imageAlt = resolved.logo.includes("pending")
+    ? resolved.type === "product"
+      ? `${label} product image placeholder`
+      : `${label} logo placeholder`
+    : resolved.logoAlt ?? `${label} logo`;
 
   return (
     <span className={`brand-logo-root brand-logo-root--${layout} brand-logo-root--${size} ${className}`.trim()}>
@@ -49,17 +54,17 @@ function BrandLogo({
         {showLogo ? (
           <img
             src={resolved.logo}
-            alt={resolved.logoAlt ?? `${label} logo`}
-            className={`brand-logo-mark ${resolved.logoOnDark ? "brand-logo-mark--on-dark" : ""}`}
+            alt={imageAlt}
+            className={`brand-logo-mark object-contain ${resolved.logoOnDark ? "brand-logo-mark--on-dark" : ""}`}
             loading="lazy"
             decoding="async"
             onError={() => setLogoFailed(true)}
           />
         ) : (
-          <span className="brand-logo-wordmark">{label}</span>
+          <span className="brand-logo-wordmark">Logo unavailable</span>
         )}
       </span>
-      {showName && showLogo ? <span className="brand-logo-name">{label}</span> : null}
+      {showName ? <span className="brand-logo-name">{label}</span> : null}
       {showSecondary && resolved.secondaryLabel ? (
         <span className="brand-logo-secondary">{resolved.secondaryLabel}</span>
       ) : null}

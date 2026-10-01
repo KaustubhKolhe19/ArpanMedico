@@ -7,7 +7,7 @@ function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Arpan Medico on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-full bg-[#25D366] px-3.5 py-3 text-white shadow-lg shadow-emerald-950/20 transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a] hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366] sm:bottom-6 sm:right-6 sm:px-4"
+      className="fixed bottom-5 right-5 z-30 flex items-center gap-2.5 rounded-full bg-[#25D366] px-3.5 py-3 text-white shadow-lg shadow-emerald-950/20 transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a] hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366] sm:bottom-6 sm:right-6 sm:px-4"
     >
       <div className="relative flex items-center justify-center">
         <svg
