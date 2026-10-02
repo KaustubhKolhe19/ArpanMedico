@@ -8,7 +8,7 @@ function HomeBusinessInsights() {
   return (
     <section
       id="business-insights"
-      className="bg-slate-50/70 section-pad border-t border-slate-200/60"
+      className="bg-white section-pad border-t border-slate-200/60"
       aria-labelledby="business-insights-heading"
     >
       <div className="site-container">

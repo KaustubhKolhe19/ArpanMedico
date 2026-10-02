@@ -11,7 +11,7 @@ function HomeBrandsSection() {
     .filter((brand) => brand !== undefined);
 
   return (
-    <section className="bg-white section-pad" aria-labelledby="home-brands-heading">
+    <section className="bg-slate-50 section-pad" aria-labelledby="home-brands-heading">
       <div className="site-container">
         {/* Header */}
         <div className="flex flex-col gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
@@ -38,7 +38,7 @@ function HomeBrandsSection() {
           {featuredBrands.map((brand) => (
             <li
               key={brand.id}
-              className="flex min-h-24 min-w-0 items-center justify-center rounded-xl border border-slate-200/80 bg-slate-50/40 p-3 transition duration-200 hover:border-teal-500/40 hover:bg-white hover:shadow-md sm:min-h-28 sm:p-4"
+              className="flex min-h-24 min-w-0 items-center justify-center rounded-xl border border-slate-200/80 bg-white p-3 transition duration-200 hover:border-teal-500/40 hover:shadow-md sm:min-h-28 sm:p-4"
             >
               <BrandLogo brand={brand} size="sm" showName />
             </li>

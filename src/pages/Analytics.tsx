@@ -11,12 +11,19 @@ import RevenueChart from "../components/analytics/RevenueChart";
 import { analyticsDemoData } from "../data/analyticsDemo";
 import type { ProductCategoryId } from "../types";
 
+const analyticsCategoryNames: Record<ProductCategoryId, string> = {
+  "surgical-products": "Surgical",
+  medicines: "Medicines",
+  instruments: "Instruments",
+  "hospital-supplies": "Hospital Supplies",
+};
+
 function Analytics() {
   const [period, setPeriod] = useState("Last 6 Months");
   const [category, setCategory] = useState<"all" | ProductCategoryId>("all");
   const categoryData = category === "all"
     ? analyticsDemoData.categoryPerformance
-    : analyticsDemoData.categoryPerformance.filter((item) => item.category.toLowerCase().replace(/ /g, "-").startsWith(category.replace(/-/g, " ").split(" ")[0]));
+    : analyticsDemoData.categoryPerformance.filter((item) => item.category === analyticsCategoryNames[category]);
 
   return (
     <>
@@ -34,7 +41,7 @@ function Analytics() {
             <OrdersChart data={analyticsDemoData.monthlyMetrics} />
           </section>
           <section className="grid min-w-0 gap-10 lg:grid-cols-[1.1fr_0.9fr]" aria-label="Sample category and industry analysis">
-            <CategoryPerformance data={categoryData.length > 0 ? categoryData : analyticsDemoData.categoryPerformance} />
+            <CategoryPerformance data={categoryData} />
             <IndustryDistribution data={analyticsDemoData.industryDistribution} />
           </section>
           <EnquiryConversion data={analyticsDemoData.enquiryConversion} />

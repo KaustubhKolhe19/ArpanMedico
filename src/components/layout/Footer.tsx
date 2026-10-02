@@ -4,17 +4,12 @@ import {
   Mail,
   MapPin,
   Phone,
-  ShieldCheck,
-  Truck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { business, navigationItems } from "../../data/business";
+import { business } from "../../data/business";
 import { createWhatsAppUrl } from "../../lib/whatsapp";
 import { phoneHref } from "../../lib/display";
-import AddressLines from "../common/AddressLines";
-import { CONTACT_GOOGLE_MAPS_EMBED_SRC, CONTACT_GOOGLE_MAPS_URL } from "../contact/contactMaps";
-
-const mncBrandsList = ["Ethicon", "Nipro", "Polymed", "BD Medical", "Romsons", "Healthium", "Nulife"];
+import { CONTACT_GOOGLE_MAPS_URL } from "../contact/contactMaps";
 
 function WhatsAppIcon({ className = "size-4" }: { className?: string }) {
   return (
@@ -30,52 +25,45 @@ function WhatsAppIcon({ className = "size-4" }: { className?: string }) {
 }
 
 function Footer() {
+  const footerNavigationItems = [
+    { label: "Home", to: "/" },
+    { label: "About Arpan Medico", to: "/about" },
+    { label: "Medical & Surgical Products", to: "/products" },
+    { label: "Healthcare Brands", to: "/brands" },
+    { label: "Industries We Serve", to: "/industries" },
+    { label: "Hospital Setup", to: "/hospital-setup" },
+    { label: "Contact Arpan Medico", to: "/contact" },
+  ];
+
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800">
-      
-      {/* Top B2B Wholesale Callout Bar */}
-      <div className="border-b border-slate-800/80 bg-gradient-to-r from-slate-950 via-teal-950/60 to-slate-950 py-7">
-        <div className="site-container flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-4">
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 shadow-md">
-              <ShieldCheck size={24} />
-            </div>
-            <div>
-              <h3 className="text-base font-bold text-white tracking-wide">
-                Surgical, Medical &amp; Hospital Supplies
-              </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Bulk MNC Pharmaceutical, Surgical Sutures &amp; Hospital Consumables Distribution in Sangamner &amp; MH.
-              </p>
-            </div>
-          </div>
+      <style>{`
+        .footer-content-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          align-items: start;
+          width: 100%;
+        }
 
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={createWhatsAppUrl("Hello Arpan Medico team, I would like to inquire about wholesale medical products.")}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-xs font-semibold text-white shadow-md transition-all hover:bg-emerald-500 active:scale-95"
-            >
-              <WhatsAppIcon className="size-4 text-white" />
-              <span>WhatsApp Inquiry</span>
-            </a>
-            <a
-              href={phoneHref(business.contact.phone)}
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5 text-xs font-semibold text-slate-200 transition-colors hover:border-teal-500/50 hover:bg-slate-850 hover:text-white"
-            >
-              <Phone size={15} className="text-teal-400" />
-              <span>Direct Hotline (+91 {business.contact.phone})</span>
-            </a>
-          </div>
-        </div>
-      </div>
+        .footer-content-grid > * {
+          min-width: 0;
+        }
 
-      {/* Main 4-Column Footer Grid */}
-      <div className="site-container grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-10 lg:py-14">
-        
-        {/* Column 1: Brand & Profile (4 cols) */}
-        <div className="space-y-4 lg:col-span-4">
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .footer-content-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .footer-content-grid {
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr) minmax(0, 1.15fr) minmax(0, 1fr);
+            column-gap: 64px;
+          }
+        }
+      `}</style>
+      <div className="site-container footer-content-grid grid items-start gap-7 py-8 lg:py-10">
+        <div className="min-w-0 space-y-3">
           <Link
             to="/"
             className="inline-flex items-center gap-3 text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-400 group"
@@ -92,20 +80,10 @@ function Footer() {
           </Link>
 
           <p className="text-xs leading-relaxed text-slate-400 max-w-sm">
-            Arpan Medico supplies medical, surgical, and hospital products in Sangamner under the leadership of <strong className="text-slate-200">{business.owner}</strong>.
+            Arpan Medico supplies medical, surgical and hospital products in Sangamner, Maharashtra.
           </p>
 
-          <div className="pt-2 flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-md bg-teal-950/80 border border-teal-500/30 px-2.5 py-1 text-[0.7rem] font-medium text-teal-300">
-              <Truck size={13} /> Hospital Setup
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-950/80 border border-emerald-500/30 px-2.5 py-1 text-[0.7rem] font-medium text-emerald-300">
-              <ShieldCheck size={13} /> Healthcare Products
-            </span>
-          </div>
-
-          {/* Social Links */}
-          <div className="pt-3 flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <a
               href="https://www.instagram.com/arpan_medico_sangamner?stkn=dWg0emRod2VnYzFt"
               target="_blank"
@@ -128,23 +106,13 @@ function Footer() {
             >
               <WhatsAppIcon className="size-4 text-emerald-400" />
             </a>
-            <a
-              href={CONTACT_GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Google Maps Location"
-              className="flex size-8 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-400 transition-colors hover:border-teal-500/50 hover:bg-slate-800 hover:text-teal-300"
-            >
-              <MapPin size={16} />
-            </a>
           </div>
         </div>
 
-        {/* Column 2: Navigation & Catalog (2.5 cols) */}
-        <div className="space-y-4 lg:col-span-2">
+        <nav className="min-w-0 space-y-3" aria-label="Footer navigation">
           <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">Navigation</h4>
-          <ul className="space-y-2 text-xs">
-            {navigationItems.map((item) => (
+          <ul className="space-y-1.5 text-xs">
+            {footerNavigationItems.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
@@ -155,82 +123,45 @@ function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                to="/about-owner"
-                className="group inline-flex items-center gap-1.5 text-slate-300 transition-colors hover:text-teal-300"
-              >
-                <ChevronRight size={12} className="text-slate-600 transition-transform group-hover:translate-x-0.5 group-hover:text-teal-400" />
-                <span>Leadership Profile</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/analytics"
-                className="group inline-flex items-center gap-1.5 text-slate-300 transition-colors hover:text-teal-300"
-              >
-                <ChevronRight size={12} className="text-slate-600 transition-transform group-hover:translate-x-0.5 group-hover:text-teal-400" />
-                <span>Business Analytics</span>
-              </Link>
-            </li>
           </ul>
-        </div>
+        </nav>
 
-        {/* Column 3: Healthcare Brands (2.5 cols) */}
-        <div className="space-y-4 lg:col-span-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">Healthcare Brands &amp; Product Lines</h4>
-          <p className="text-[0.7rem] text-slate-400">
-            Brands and product lines represented in Arpan Medico&apos;s portfolio:
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {mncBrandsList.map((brand) => (
-              <Link
-                key={brand}
-                to="/brands"
-                className="rounded-md border border-slate-800 bg-slate-900/90 px-2.5 py-1 text-[0.7rem] font-medium text-slate-300 transition-colors hover:border-teal-500/40 hover:text-teal-300"
-              >
-                {brand}
-              </Link>
-            ))}
-          </div>
-          <div className="pt-2">
-            <Link
-              to="/brands"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400 hover:text-teal-300 transition-colors"
-            >
-              <span>Explore All Healthcare Brands</span>
-              <ExternalLink size={13} />
-            </Link>
-          </div>
-        </div>
-
-        {/* Column 4: Location & Contact (3 cols) */}
-        <div className="space-y-4 lg:col-span-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">Distribution Hub</h4>
+        <section className="min-w-0 space-y-3" aria-labelledby="footer-distribution">
+          <h4 id="footer-distribution" className="text-xs font-bold uppercase tracking-wider text-teal-400">Distribution Hub</h4>
           
-          <div className="space-y-2.5 text-xs text-slate-300">
+          <div className="space-y-2 text-xs text-slate-300">
             <div className="flex items-start gap-2.5">
               <MapPin size={15} className="mt-0.5 shrink-0 text-teal-400" />
-              <div>
-                <AddressLines includeDistrict={false} />
+              <div className="leading-relaxed">
+                <div>{business.address.line1}</div>
+                <div>
+                  {business.address.line2}, {business.address.landmark}
+                </div>
+                <div>
+                  {business.address.street}, {business.address.city} -{" "}
+                  {business.address.postalCode}
+                </div>
+                <div>
+                  {business.address.state}, {business.address.country}
+                </div>
               </div>
             </div>
 
             <div className="flex items-center gap-2.5">
               <Mail size={15} className="shrink-0 text-teal-400" />
-              <a href={`mailto:${business.contact.email}`} className="hover:text-teal-300 transition-colors truncate">
+              <a href={`mailto:${business.contact.email}`} className="whitespace-nowrap transition-colors hover:text-teal-300">
                 {business.contact.email}
               </a>
             </div>
 
             <div className="flex items-start gap-2.5">
               <Phone size={15} className="mt-0.5 shrink-0 text-teal-400" />
-              <div className="flex flex-wrap gap-x-2 gap-y-1">
+              <div className="grid grid-cols-1 gap-y-1 lg:grid-cols-2 lg:gap-x-3">
                 {business.contact.phoneNumbers.map((phoneNumber) => (
                   <a
                     key={phoneNumber}
                     href={phoneHref(phoneNumber)}
-                    className="hover:text-teal-300 transition-colors"
+                    className="whitespace-nowrap text-xs transition-colors hover:text-teal-300"
                   >
                     +91 {phoneNumber}
                   </a>
@@ -239,39 +170,56 @@ function Footer() {
             </div>
           </div>
 
-          {/* Interactive Map Preview Card */}
-          <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-md">
-            <div className="h-28 w-full overflow-hidden">
-              <iframe
-                title={`${business.name} location map`}
-                src={CONTACT_GOOGLE_MAPS_EMBED_SRC}
-                className="block h-full w-full border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-              />
-            </div>
+          <a
+            href={CONTACT_GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-[0.7rem] font-semibold text-slate-300 transition-colors hover:border-teal-500/50 hover:text-teal-300"
+          >
+            <span>Get Directions</span>
+            <ExternalLink size={11} />
+          </a>
+        </section>
+
+        <section className="min-w-0 space-y-3" aria-labelledby="footer-conversation">
+          <h4 id="footer-conversation" className="text-xs font-bold uppercase tracking-wider text-teal-400">
+            Start a Conversation
+          </h4>
+          <div className="space-y-1.5">
+            <p className="text-sm font-semibold leading-snug text-white">
+              Looking for medical, surgical or hospital supplies?
+            </p>
+            <p className="text-xs leading-relaxed text-slate-400">
+              Contact Arpan Medico in Sangamner with your requirement.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
             <a
-              href={CONTACT_GOOGLE_MAPS_URL}
+              href={createWhatsAppUrl("Hello Arpan Medico, I would like to enquire about medical, surgical or hospital supplies.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between bg-slate-900/90 px-3 py-2 text-[0.7rem] font-semibold text-slate-300 hover:text-teal-300 transition-colors border-t border-slate-800"
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-emerald-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
             >
-              <span>Kadlag Complex, Sangamner</span>
-              <span className="flex items-center gap-1 text-teal-400">
-                Directions <ExternalLink size={11} />
-              </span>
+              <WhatsAppIcon className="size-4 text-white" />
+              WhatsApp Enquiry
+            </a>
+            <a
+              href={phoneHref(business.contact.phone)}
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-teal-500/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+            >
+              <Phone size={15} className="text-teal-400" />
+              Call Us
             </a>
           </div>
-        </div>
+        </section>
 
       </div>
 
       {/* Bottom Copyright & Credit Bar */}
-      <div className="border-t border-slate-800/80 bg-slate-950 py-5 text-xs text-slate-500">
-        <div className="site-container flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-slate-800/80 bg-slate-950 py-4 text-xs text-slate-500">
+        <div className="site-container flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} <strong className="text-slate-300">{business.name}</strong>. All rights reserved. Wholesale Healthcare Supplies Sangamner.
+            © 2026 <strong className="text-slate-300">{business.name}</strong>. All rights reserved.
           </p>
           <p className="text-[0.7rem] text-slate-500">
             Designed &amp; Developed by <span className="text-slate-400 font-medium">Nilesh Kotkar</span> &amp; <span className="text-slate-400 font-medium">Kaustubh Kolhe</span>

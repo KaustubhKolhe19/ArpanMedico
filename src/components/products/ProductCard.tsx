@@ -25,9 +25,9 @@ function renderItemIcon(category: ProductItem["category"], name: string) {
 
 function ProductCard({ item }: ProductCardProps) {
   return (
-    <div className="rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-2xs transition duration-200 hover:border-teal-500/40 hover:shadow-xs">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-3">
+    <div className="h-full min-h-14 rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition duration-200 hover:border-teal-500/40 hover:shadow-xs sm:p-3.5">
+      <div className="flex items-start justify-between gap-2.5 sm:gap-3">
+        <div className="flex min-w-0 flex-1 items-start gap-2.5 sm:gap-3">
           <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg border border-teal-100/70 bg-teal-50/90 text-teal-700">
             {item.image ? (
               <img
@@ -40,10 +40,10 @@ function ProductCard({ item }: ProductCardProps) {
               renderItemIcon(item.category, item.name)
             )}
           </div>
-          <h3 className="truncate text-xs font-semibold text-slate-800">{item.name}</h3>
+          <h3 className="min-w-0 break-words text-xs font-semibold leading-5 text-slate-800 sm:text-sm">{item.name}</h3>
         </div>
         {item.verificationStatus === "verified" ? (
-          <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-slate-200/70 bg-slate-50 px-2.5 py-1 text-[0.65rem] font-medium text-slate-600">
+          <div className="flex shrink-0 items-center gap-1 rounded-full border border-slate-200/70 bg-slate-50 px-2 py-1 text-[0.6rem] font-medium text-slate-600 sm:gap-1.5 sm:px-2.5 sm:text-[0.65rem]">
             <CheckCircle2 size={11} className="shrink-0 text-teal-600" />
             <span>Verified</span>
           </div>

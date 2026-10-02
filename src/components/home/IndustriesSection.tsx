@@ -22,7 +22,7 @@ const industryDescriptions: Record<string, string> = {
 
 function IndustriesSection() {
   return (
-    <section className="bg-slate-50/70 section-pad border-y border-slate-200/60" aria-labelledby="home-industries-heading">
+    <section className="bg-white section-pad border-y border-slate-200/60" aria-labelledby="home-industries-heading">
       <div className="site-container">
         {/* Header */}
         <div className="flex flex-col gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">

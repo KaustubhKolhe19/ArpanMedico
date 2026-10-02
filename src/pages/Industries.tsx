@@ -1,7 +1,6 @@
 import { ArrowRight, Award, Building2, Clock, MessageSquare, ShieldCheck, ThermometerSnowflake, Truck } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import EnquiryCTA from "../components/common/EnquiryCTA";
 import IndustryCategoryGrid from "../components/industries/IndustryCategoryGrid";
 import { business } from "../data/business";
 import { industries } from "../data/industries";
@@ -160,13 +159,6 @@ function Industries() {
         </div>
       </section>
 
-      <EnquiryCTA
-        eyebrow="Institutional Supply Enquiries"
-        title="Need medical supply distribution for your facility?"
-        description={`Contact ${business.name} to discuss institutional supply contracts or request a customized B2B price quote.`}
-        contactLink
-        showCall={false}
-      />
     </>
   );
 }

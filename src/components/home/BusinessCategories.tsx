@@ -1,13 +1,19 @@
-import { ArrowRight, FlaskConical, Package, Stethoscope } from "lucide-react";
+import { ArrowRight, Hospital, Package, Pill, Scissors, Stethoscope } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { business } from "../../data/business";
 import { displayCategory } from "../../lib/display";
 
-const categoryIcons = [Package, FlaskConical, Stethoscope];
+const categoryIcons: Record<string, LucideIcon> = {
+  Surgical: Scissors,
+  Medicines: Pill,
+  Instruments: Stethoscope,
+  "Hospital Supplies": Hospital,
+};
 
 function BusinessCategories() {
   return (
-    <section className="bg-slate-50 section-pad" aria-labelledby="categories-heading">
+    <section className="bg-white section-pad" aria-labelledby="categories-heading">
       <div className="site-container grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center lg:gap-16">
         <div>
           <p className="section-eyebrow text-teal-700">What we do</p>
@@ -20,7 +26,7 @@ function BusinessCategories() {
           </p>
           <ul className="mt-8 grid border-y border-slate-200">
             {business.categories.map((category, index) => {
-              const Icon = categoryIcons[index];
+              const Icon = categoryIcons[category] ?? Package;
               return (
                 <li key={category} className="flex items-center gap-4 border-b border-slate-200 py-4 last:border-b-0">
                   <span className="text-[0.7rem] font-semibold tracking-[0.16em] text-teal-700">

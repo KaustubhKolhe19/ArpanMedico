@@ -35,16 +35,10 @@ export type BusinessInfo = {
 };
 
 export type ProductCategoryId =
-  | "medicines"
   | "surgical-products"
+  | "medicines"
   | "instruments"
-  | "hospital-beds"
-  | "patient-monitors"
-  | "hospital-equipment"
-  | "hospital-machines"
-  | "surgical-equipment"
-  | "mnc-company-equipment-products"
-  | "mobility-patient-care";
+  | "hospital-supplies";
 
 export type ProductItem = {
   id: string;

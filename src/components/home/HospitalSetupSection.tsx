@@ -13,12 +13,12 @@ const hospitalSetupRequirements = [
 
 function HospitalSetupSection() {
   return (
-    <section className="bg-white section-pad" aria-labelledby="hospital-setup-heading">
+    <section className="bg-slate-50 section-pad" aria-labelledby="hospital-setup-heading">
       <div className="site-container grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-14">
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
           <img
-            src="/assets/why-choose-us-inventory.png"
-            alt="Healthcare inventory and medical supply items"
+            src="/assets/products/hospital-category.svg"
+            alt="Hospital setup with a modern patient bed and bedside monitor"
             className="aspect-[4/3] w-full object-cover"
             loading="lazy"
           />
