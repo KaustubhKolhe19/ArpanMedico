@@ -1,5 +1,4 @@
 import {
-  ArrowUpRight,
   Bed,
   Building2,
   Cog,
@@ -8,9 +7,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import PageHero from "../components/common/PageHero";
-import { business } from "../data/business";
-import { createWhatsAppUrl } from "../lib/whatsapp";
+import HospitalSetupHero from "../components/hospitalSetup/HospitalSetupHero";
 
 const hospitalSetupRequirements = [
   { title: "Hospital Beds", description: "Hospital beds for setup requirements.", Icon: Bed },
@@ -25,31 +22,7 @@ const hospitalSetupRequirements = [
   },
 ];
 
-const setupHighlights = [
-  {
-    title: "Complete Hospital Setup",
-    description: "Equipment and supply requirements",
-    Icon: HospitalIcon,
-    iconClassName: "bg-teal-500/10 text-teal-300",
-  },
-  {
-    title: "Hospital Equipment & Machines",
-    description: "Hospital equipment and machines",
-    Icon: Cog,
-    iconClassName: "bg-emerald-500/10 text-emerald-300",
-  },
-  {
-    title: "Surgical Equipment & Supplies",
-    description: "Medical and surgical requirements",
-    Icon: Stethoscope,
-    iconClassName: "bg-cyan-500/10 text-cyan-300",
-  },
-];
-
 function HospitalSetup() {
-  const message =
-    "Hello Arpan Medico, I am planning a hospital setup and would like to enquire about hospital beds, patient monitors, hospital equipment, hospital machines, surgical equipment, and other required products.";
-
   return (
     <>
       <Helmet>
@@ -73,45 +46,11 @@ function HospitalSetup() {
           content="Enquire with Arpan Medico about hospital equipment and medical and surgical supply requirements for hospital setup."
         />
       </Helmet>
-      <PageHero
-        eyebrow="HOSPITAL SOLUTIONS"
-        title="Complete Hospital Setup Solutions"
-        description="Arpan Medico can support hospitals with equipment and medical and surgical supply requirements for hospital setup."
-        locationLabel={business.address.city}
-        locationHint={`${business.address.state}, ${business.address.country}`}
-        action={
-          <a
-            href={createWhatsAppUrl(message)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Discuss your hospital setup with Arpan Medico on WhatsApp"
-            className="btn btn-on-dark"
-          >
-            Discuss Your Hospital Setup
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
-        }
-      />
-      <section className="border-t border-slate-800 bg-slate-950 py-5 sm:py-6" aria-label="Hospital setup highlights">
-        <div className="site-container">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {setupHighlights.map(({ title, description, Icon, iconClassName }) => (
-              <div
-                key={title}
-                className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3"
-              >
-                <div className={`flex size-9 items-center justify-center rounded-lg ${iconClassName}`}>
-                  <Icon size={20} aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-white">{title}</p>
-                  <p className="text-[0.65rem] text-slate-400">{description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+      {/* Modern Integrated Hero Header */}
+      <HospitalSetupHero />
+
+      {/* Equipment & Requirements Grid */}
       <section className="bg-slate-50 section-pad" aria-labelledby="hospital-setup-requirements">
         <div className="site-container">
           <div className="max-w-2xl">
@@ -139,6 +78,8 @@ function HospitalSetup() {
           </ul>
         </div>
       </section>
+
+      {/* Hospital Support Section */}
       <section className="border-y border-slate-200/80 bg-white section-pad" aria-labelledby="hospital-setup-support">
         <div className="site-container grid gap-6 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-5">
           <div className="flex size-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
