@@ -1,4 +1,5 @@
 import type { BusinessInfo, NavigationItem } from "../types";
+import { productCategories } from "./products";
 
 const primaryPhoneNumber = "9529856595";
 
@@ -12,7 +13,7 @@ export const business: BusinessInfo = {
     "Arpan Medico supplies MNC surgical products, injectable medicines, IV fluids, rehabilitation products, and hospital consumables. We cater to hospitals, medical stores, clinics, diagnostic centers, corporate healthcare organizations, and pharmaceutical businesses with a wide range of products.",
     "Our focus is on providing genuine products, competitive wholesale pricing, quick order processing, and dependable customer support to healthcare professionals across Maharashtra.",
   ],
-  categories: ["Medicines", "Surgical", "Instruments"],
+  categories: productCategories.map((category) => category.name),
   address: {
     line1: "Arpan Medico",
     line2: "Kadlag Complex",

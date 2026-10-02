@@ -6,20 +6,10 @@ import { createWhatsAppUrl } from "../../lib/whatsapp";
 function AboutHero() {
   return (
     <section className="relative overflow-hidden bg-slate-950 text-white border-b border-slate-800">
-      {/* Ambient Medical Glow Effects */}
-      <div
-        className="pointer-events-none absolute -top-32 -left-32 size-[450px] rounded-full bg-teal-500/10 blur-[120px] animate-glow-pulse"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 -right-32 size-[450px] rounded-full bg-emerald-500/10 blur-[130px] animate-glow-pulse"
-        aria-hidden="true"
-      />
-
       <div className="site-container hero-pad relative z-10">
         <div className="max-w-3xl">
           {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-950/70 px-3.5 py-1.5 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-950/70 px-3.5 py-1.5">
             <Award size={14} className="text-teal-400" />
             <span className="text-xs font-semibold uppercase tracking-wider text-teal-300">
               Corporate Profile • {business.address.city}, {business.address.state}
@@ -28,7 +18,7 @@ function AboutHero() {
 
           {/* Title */}
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            About <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200 bg-clip-text text-transparent">{business.name}</span>
+            About <span className="text-teal-300">{business.name}</span>
           </h1>
 
           {/* Subtitle */}

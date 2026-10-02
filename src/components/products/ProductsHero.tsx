@@ -17,8 +17,8 @@ function ProductsHero() {
         aria-hidden="true"
       />
 
-      <div className="site-container hero-pad relative z-10">
-        <div className="max-w-3xl">
+      <div className="site-container relative z-10 py-12 md:py-16 xl:py-20">
+        <div className="max-w-4xl">
           {/* Eyebrow Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-950/70 px-3.5 py-1.5 backdrop-blur-md">
             <Award size={14} className="text-teal-400" />
@@ -28,8 +28,8 @@ function ProductsHero() {
           </div>
 
           {/* Title */}
-          <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Medical, Surgical &amp; <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-200 bg-clip-text text-transparent">Hospital Supplies</span>
+          <h1 className="mt-4 text-[1.75rem] font-extrabold tracking-tight text-white sm:text-4xl xl:text-5xl">
+            Medical, Surgical &amp; <span className="text-teal-300">Hospital Supplies</span>
           </h1>
 
           {/* Subtitle */}
@@ -38,10 +38,10 @@ function ProductsHero() {
           </p>
 
           {/* Primary Action Button */}
-          <div className="mt-7 flex flex-wrap items-center gap-3.5">
+          <div className="mt-6 flex flex-col items-stretch gap-3 sm:mt-7 sm:flex-row sm:items-center">
             <Link
               to="/contact#contact-form"
-              className="inline-flex items-center gap-2.5 rounded-lg bg-teal-600 px-5 py-3 text-xs font-bold text-white shadow-lg transition-all hover:bg-teal-500 active:scale-95"
+              className="inline-flex min-h-11 items-center justify-center gap-2.5 rounded-lg bg-teal-600 px-5 py-3 text-center text-xs font-bold text-white shadow-lg transition-all hover:bg-teal-500 active:scale-95 sm:w-fit"
             >
               <MessageSquare size={16} />
               <span>Start a Conversation / Request Quotation</span>
@@ -51,7 +51,7 @@ function ProductsHero() {
         </div>
 
         {/* Quick Stat Pill Bar */}
-        <div className="mt-10 grid grid-cols-2 gap-3 border-t border-slate-800/80 pt-6 sm:grid-cols-3">
+        <div className="mt-8 grid gap-3 border-t border-slate-800/80 pt-5 sm:mt-10 sm:grid-cols-2 sm:pt-6 xl:grid-cols-3">
           <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
             <div className="flex size-9 items-center justify-center rounded-lg bg-teal-500/10 text-teal-300">
               <Stethoscope size={20} />
@@ -72,7 +72,7 @@ function ProductsHero() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3 col-span-2 sm:col-span-1">
+          <div className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3 sm:col-span-2 xl:col-span-1">
             <div className="flex size-9 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-300">
               <Award size={20} />
             </div>

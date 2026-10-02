@@ -13,8 +13,8 @@ function WhyChooseSection() {
             description="Client-confirmed reasons to consider Arpan Medico for healthcare supply requirements."
           />
           <img
-            src="/assets/why-choose-us-inventory.png"
-            alt="Organized pharmacy inventory shelves with boxed healthcare supplies"
+            src="/assets/products/healthcare-supply.svg"
+            alt="Medical and surgical supplies organized for healthcare distribution"
             className="mt-8 h-[260px] w-full max-w-[520px] rounded-2xl border border-slate-200 object-cover shadow-[0_6px_18px_rgb(15_23_42/0.05)] sm:h-[300px]"
             loading="lazy"
           />

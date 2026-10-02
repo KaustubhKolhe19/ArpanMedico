@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import OwnerBusinessFocus from "../components/owner/OwnerBusinessFocus";
-import OwnerContactCTA from "../components/owner/OwnerContactCTA";
 import OwnerHero from "../components/owner/OwnerHero";
 import OwnerProfileSection from "../components/owner/OwnerProfileSection";
 import { owner } from "../data/owner";
@@ -50,7 +49,6 @@ function OwnerProfile() {
       <OwnerHero />
       <OwnerProfileSection />
       <OwnerBusinessFocus />
-      <OwnerContactCTA />
     </>
   );
 }

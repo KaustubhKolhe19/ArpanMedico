@@ -1,8 +1,8 @@
 import {
   Award,
-  CheckCircle2,
   ChevronRight,
   HeartPulse,
+  Hospital,
   MessageSquare,
   Phone,
   ShieldCheck,
@@ -165,20 +165,13 @@ function Hero() {
                       {category.toLowerCase().includes("medicine") && <Syringe size={14} />}
                       {category.toLowerCase().includes("surgical") && <Stethoscope size={14} />}
                       {category.toLowerCase().includes("instrument") && <Award size={14} />}
+                      {category.toLowerCase().includes("hospital") && <Hospital size={14} />}
                     </div>
                     <span className="text-xs font-medium text-slate-200">
                       {displayCategory(category)}
                     </span>
                   </div>
                 ))}
-                <div className="flex items-center gap-2.5 rounded-lg border border-slate-800 bg-slate-950/60 p-2.5 transition-colors hover:border-teal-500/40 hover:bg-slate-900">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded bg-teal-900/50 text-teal-300">
-                    <CheckCircle2 size={14} />
-                  </div>
-                  <span className="text-xs font-medium text-slate-200">
-                    IV Fluids &amp; Consumables
-                  </span>
-                </div>
               </div>
             </div>
 

@@ -10,7 +10,6 @@ import {
 import { Helmet } from "react-helmet-async";
 import AboutHero from "../components/about/AboutHero";
 import BusinessOverview from "../components/about/BusinessOverview";
-import EnquiryCTA from "../components/common/EnquiryCTA";
 import { business } from "../data/business";
 import { industries } from "../data/industries";
 import { specialties } from "../data/specialties";
@@ -130,14 +129,6 @@ function About() {
       {/* Industries Served */}
       <StyledContentGrid title="Healthcare Sectors We Serve" items={industries} icon={Building2} muted />
 
-      {/* Enquiry CTA */}
-      <EnquiryCTA
-        eyebrow="Direct Wholesale Enquiries"
-        title="Require Medical or Surgical Supplies?"
-        description={`Contact ${business.name} central distribution warehouse in ${address.city}.`}
-        contactLink
-        showCall={false}
-      />
     </>
   );
 }

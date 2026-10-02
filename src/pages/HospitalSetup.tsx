@@ -155,29 +155,6 @@ function HospitalSetup() {
           </div>
         </div>
       </section>
-      <section className="bg-teal-700 text-white" aria-labelledby="hospital-setup-enquiry">
-        <div className="site-container flex flex-col gap-6 py-8 sm:py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-10">
-          <div className="max-w-2xl">
-            <p className="section-eyebrow text-teal-100">Hospital Setup Enquiries</p>
-            <h2 id="hospital-setup-enquiry" className="section-title text-white">
-              Planning a Hospital Setup?
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-teal-50 sm:text-[0.975rem]">
-              Discuss your hospital equipment and medical or surgical supply requirements with Arpan Medico.
-            </p>
-          </div>
-          <a
-            href={createWhatsAppUrl(message)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Discuss your hospital setup with Arpan Medico on WhatsApp"
-            className="btn btn-on-dark shrink-0"
-          >
-            Discuss Your Hospital Setup
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
     </>
   );
 }

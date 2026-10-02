@@ -5,12 +5,10 @@ import { business } from "../../data/business";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjyvlrjz";
 
 const categoryOptions = [
-  "Wholesale Medicines & Injectables",
-  "Surgical Sutures & Cannulas",
-  "IV Fluids & Hospital Consumables",
-  "Medical Equipment & Diagnostic Devices",
-  "General Wholesale Inquiry",
-  "Others",
+  "Surgical",
+  "Medicines",
+  "Instruments",
+  "Hospital Supplies",
 ];
 
 function ContactForm() {

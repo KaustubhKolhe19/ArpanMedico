@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import BusinessCategories from "../components/home/BusinessCategories";
 import BusinessIntro from "../components/home/BusinessIntro";
-import ContactCTA from "../components/home/ContactCTA";
 import Hero from "../components/home/Hero";
 import HospitalSetupSection from "../components/home/HospitalSetupSection";
 import HomeBrandsSection from "../components/home/HomeBrandsSection";
@@ -61,7 +60,7 @@ function Home() {
       <BusinessIntro />
       <BusinessCategories />
       <SpecialtiesSection />
-      <Suspense fallback={<div className="bg-slate-50 section-pad" aria-busy="true" aria-label="Loading business insights" />}>
+      <Suspense fallback={<div className="bg-white section-pad" aria-busy="true" aria-label="Loading business insights" />}>
         <HomeBusinessInsights />
       </Suspense>
       <HomeBrandsSection />
@@ -70,7 +69,6 @@ function Home() {
       <WhyChooseSection />
       <StrengthSection />
       <OwnerPreview />
-      <ContactCTA />
     </>
   );
 }

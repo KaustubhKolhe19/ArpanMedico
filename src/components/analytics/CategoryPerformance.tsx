@@ -96,40 +96,46 @@ function CategoryPerformance({ data, headingLevel = "h2" }: CategoryPerformanceP
       <Heading id="category-performance-title" className="text-lg font-bold tracking-tight text-slate-950">
         Revenue by Category
       </Heading>
-      <div
-        className="mt-5 h-60 w-full min-w-0 overflow-hidden sm:h-72"
-        aria-label="Horizontal bar chart of revenue by business category, in lakhs of rupees"
-      >
-        <ResponsiveContainer width="100%" height="100%" debounce={50}>
-          <BarChart data={chartData} layout="vertical" margin={{ top: 4, right: 16, left: 4, bottom: 0 }}>
-            <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" horizontal={false} />
-            <XAxis
-              type="number"
-              tick={{ fontSize: 12, fill: "#64748b" }}
-              tickLine={false}
-              axisLine={false}
-              tickFormatter={(value: number) => formatLakhs(value)}
-            />
-            <YAxis
-              type="category"
-              dataKey="category"
-              width={128}
-              interval={0}
-              tick={<CategoryTick />}
-              tickLine={false}
-              axisLine={false}
-            />
-            <Tooltip content={<CategoryTooltip />} cursor={{ fill: "#f8fafc" }} />
-            <Bar
-              dataKey="revenue"
-              name="Revenue"
-              fill={ANALYTICS_ACCENT_DARK}
-              barSize={18}
-              isAnimationActive={false}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+      {chartData.length ? (
+        <div
+          className="mt-5 h-60 w-full min-w-0 overflow-hidden sm:h-72"
+          aria-label="Horizontal bar chart of revenue by business category, in lakhs of rupees"
+        >
+          <ResponsiveContainer width="100%" height="100%" debounce={50}>
+            <BarChart data={chartData} layout="vertical" margin={{ top: 4, right: 16, left: 4, bottom: 0 }}>
+              <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" horizontal={false} />
+              <XAxis
+                type="number"
+                tick={{ fontSize: 12, fill: "#64748b" }}
+                tickLine={false}
+                axisLine={false}
+                tickFormatter={(value: number) => formatLakhs(value)}
+              />
+              <YAxis
+                type="category"
+                dataKey="category"
+                width={128}
+                interval={0}
+                tick={<CategoryTick />}
+                tickLine={false}
+                axisLine={false}
+              />
+              <Tooltip content={<CategoryTooltip />} cursor={{ fill: "#f8fafc" }} />
+              <Bar
+                dataKey="revenue"
+                name="Revenue"
+                fill={ANALYTICS_ACCENT_DARK}
+                barSize={18}
+                isAnimationActive={false}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      ) : (
+        <p className="mt-5 flex h-60 items-center justify-center text-sm text-slate-500 sm:h-72">
+          No sample data is available for this category.
+        </p>
+      )}
       <ul className="sr-only">
         {data.map((point) => (
           <li key={point.category}>

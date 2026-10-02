@@ -31,7 +31,7 @@ const iconMap: Record<string, typeof Headphones> = {
 
 function SpecialtiesSection() {
   return (
-    <section className="bg-white section-pad" aria-labelledby="specialties-heading">
+    <section className="bg-slate-50 section-pad" aria-labelledby="specialties-heading">
       <div className="site-container">
         {/* Section Header */}
         <div className="flex flex-col gap-3 border-b border-slate-200 pb-6 md:flex-row md:items-end md:justify-between">
@@ -53,7 +53,7 @@ function SpecialtiesSection() {
             return (
               <div
                 key={item.id}
-                className="group flex items-start gap-4 rounded-xl border border-slate-200/80 bg-slate-50/40 p-5 transition duration-200 hover:border-teal-500/40 hover:bg-white hover:shadow-lg"
+                className="group flex items-start gap-4 rounded-xl border border-slate-200/80 bg-white p-5 transition duration-200 hover:border-teal-500/40 hover:shadow-lg"
               >
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-teal-100/70 text-teal-800 transition duration-200 group-hover:bg-teal-700 group-hover:text-white">
                   <Icon size={22} />
