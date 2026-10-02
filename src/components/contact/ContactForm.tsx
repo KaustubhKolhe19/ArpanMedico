@@ -249,9 +249,6 @@ function ContactForm() {
               </>
             )}
           </button>
-          <p className="text-center text-[0.68rem] text-slate-400">
-            Powered by Formspree • Direct notification sent to {business.contact.email}
-          </p>
         </form>
       )}
     </div>
