@@ -17,8 +17,8 @@ const businessId = "https://arpanmedico.com/#business";
 
 function Home() {
   const { address, contact } = business;
-  const seoTitle = `${business.description} | ${business.name} ${address.city}`;
-  const seoDescription = `${business.name} in ${address.city}, ${address.state} supplies medical and surgical products, hospital supplies and hospital equipment, including hospital setup product lines.`;
+  const seoTitle = "Arpan Medico | Wholesale Medical Supplies in Sangamner";
+  const seoDescription = "Arpan Medico supplies medicines, surgical products, medical instruments and healthcare supplies at wholesale in Sangamner, Maharashtra.";
   const structuredData = {
     "@context": "https://schema.org",
     "@id": businessId,
